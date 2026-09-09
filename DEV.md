@@ -28,8 +28,9 @@ Scaffold in progress under H-1165. Landed: the repository, its private
 remote, the boundary and contribution documents, the skill/knowledge/
 evidence layout with one worked example of each ([LAYOUT.md](LAYOUT.md)), and
 the structural checks (`node tools/check.mjs`, proven red by
-`node tools/check-fixtures.mjs`). Not yet landed: the behavioural baseline
-runner and the diagramming foundation. The diagram
+`node tools/check-fixtures.mjs`), and the behavioural baseline runner
+(`node tools/run-case.mjs`) with one worked case. Not yet landed: the
+diagramming foundation. The diagram
 framework is Arthur's choice — surveyed with evidence and recommended to him,
 never picked here (his direction, 2026-09-08); the same sitting established
 that he is personally involved in every visual element.
@@ -44,6 +45,14 @@ The boundary is enforced, not only written: the local-path scan lives in the
 committed checker, with its patterns in `tools/local-path-patterns.txt` so
 that stating a rule does not trip it. The fixtures are the only place a
 machine-local path is committed on purpose.
+
+The behavioural runner deliberately does two things a session may try to
+"improve". It refuses to run without the model and harness identity, because
+a result nothing can be compared against is not a baseline. And it does not
+score — the record lands `verdict: unjudged` for a reviewer who did not run
+it, because a run graded by the machinery that produced it measures nothing.
+Both are load-bearing; adding a scorer here would quietly turn evidence into
+a self-assessment.
 
 The example content carries `status: exemplar` on purpose. It was written to
 fix the structure, and the research team reviews its claims like any other

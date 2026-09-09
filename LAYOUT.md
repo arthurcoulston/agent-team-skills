@@ -1,10 +1,11 @@
 # Layout
 
-Three kinds of file, three directories, and one rule for how they refer to
+Four kinds of file, four directories, and one rule for how they refer to
 each other.
 
     skills/<name>/SKILL.md    an entrypoint an agent loads
     knowledge/<id>.md         a supporting entry and its metadata
+    cases/<id>.md             a task the guidance is run against
     evidence/<id>.md          a preserved record an entry rests on
 
 One worked example of each is in the tree already. They exist to show the
@@ -102,13 +103,48 @@ Failed and negative results are preserved on the same terms as successful
 ones. An evidence record is never edited to match a revised finding — a new
 reading gets a new record, and the entry cites both.
 
+## Behavioural cases
+
+`cases/<id>.md`. One task, with the metadata a run needs and the rubric a
+reviewer judges by. The frontmatter carries `id`, `title`, `status`, the
+`skill:` ref the case is about, and `rubric`. The body carries a `## Task`
+section, which is sent to the agent **verbatim** — what an operator reads as
+the task is exactly what the model is given, with no assembly in between.
+
+    node tools/run-case.mjs <case-id> --agent '<command>' --model '<model id>' \
+         --harness '<name and version>' --by '<who ran it>'
+
+The runner runs the case twice, once with the skill's text prepended to the
+prompt and once without, and writes an `evidence/` record holding both
+answers. The command is anything that reads a prompt on stdin and writes an
+answer on stdout, so the collection assumes no particular harness.
+
+Three things about it are deliberate:
+
+- **It refuses to run without the model, the harness and the runner's name.**
+  A result whose identity is unknown cannot be compared with a later one, so
+  it is not a baseline; a guessed identity is worse than a refusal.
+- **It records; it does not score.** The record lands `verdict: unjudged`,
+  and a reviewer who did not run it reads both answers against the rubric.
+  A run graded by the machinery that produced it is not a measurement.
+- **Failures are preserved on the same terms as successes.** A run that
+  errors or times out is written into the record with its exit code and its
+  stderr. A baseline that quietly drops its failures overstates what the
+  collection has been shown to do.
+
+The with-skill variant puts the skill's body into the prompt. That is not the
+same as a harness deciding on its own to load the skill, and a run record
+says so: it is evidence about the guidance reaching the model, not about the
+description getting it opened.
+
 ## Referring between files
 
 Two forms, for two readers.
 
 - **Typed refs**, in frontmatter, for the checks and the generated views:
   `<kind>:<id>`, resolving as `knowledge:x` → `knowledge/x.md`,
-  `evidence:x` → `evidence/x.md`, `skill:x` → `skills/x/SKILL.md`.
+  `evidence:x` → `evidence/x.md`, `case:x` → `cases/x.md`,
+  `skill:x` → `skills/x/SKILL.md`.
 - **Relative markdown links**, in prose, for a person following the argument.
 
 Where a relation and a prose link mean the same thing, both are present and

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Structural checks over a collection tree: metadata format, reference
-// resolution, identifier consistency, prose citations, and the scan for
-// machine-local paths that PUBLIC-BOUNDARY.md forbids.
+// resolution, identifier consistency, prose citations, behavioural cases and
+// the run records they produce, and the scan for machine-local paths that
+// PUBLIC-BOUNDARY.md forbids.
 //
 //   node tools/check.mjs [root]      (root defaults to the repository)
 //
@@ -19,13 +20,19 @@ const root = resolve(process.argv[2] ?? join(HERE, '..'));
 const KIND_PATH = {
   knowledge: (id) => join('knowledge', `${id}.md`),
   evidence: (id) => join('evidence', `${id}.md`),
+  case: (id) => join('cases', `${id}.md`),
   skill: (id) => join('skills', id, 'SKILL.md'),
 };
+// The kind names a ref uses are singular; two of the directories are not.
+const FLAT_DIR = { knowledge: 'knowledge', evidence: 'evidence', case: 'cases' };
 const STATUSES = ['exemplar', 'draft', 'accepted', 'superseded'];
 const RELATION_TYPES = ['applies_to', 'supports', 'depends_on', 'supersedes'];
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const IDENTIFIER = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const TYPED_REF = /^(knowledge|evidence|skill):(.+)$/;
+const TYPED_REF = /^(knowledge|evidence|case|skill):(.+)$/;
+// The two variants a behavioural run compares; a record missing either is not
+// a comparison, and cannot serve as the baseline a later judgement needs.
+const RUN_VARIANTS = ['baseline', 'with-skill'];
 
 // What the local-path scan reads: not a list of what may live here, a list of
 // what can be read as text.
@@ -160,10 +167,10 @@ function collectEntries() {
     if (existsSync(path)) entries.push({ kind: 'skill', id: name, path });
     else report(relative(root, dir), 'skill-entrypoint-missing', 'skill directory has no SKILL.md');
   }
-  for (const kind of ['knowledge', 'evidence']) {
-    for (const name of listDir(join(root, kind))) {
+  for (const [kind, dir] of Object.entries(FLAT_DIR)) {
+    for (const name of listDir(join(root, dir))) {
       if (!name.endsWith('.md')) continue;
-      entries.push({ kind, id: name.slice(0, -3), path: join(root, kind, name) });
+      entries.push({ kind, id: name.slice(0, -3), path: join(root, dir, name) });
     }
   }
   for (const entry of entries) {
@@ -280,7 +287,7 @@ function checkKnowledge(entry, refs) {
   }
 }
 
-function checkEvidence(entry) {
+function checkEvidence(entry, refs) {
   const d = entry.data;
   if (present(entry, 'id', d.id) && d.id !== entry.id) {
     report(entry.rel, 'id-filename-mismatch', `frontmatter id is '${d.id}' but the filename stem is '${entry.id}'`);
@@ -288,6 +295,59 @@ function checkEvidence(entry) {
   for (const field of ['kind', 'source_title', 'read_by', 'method']) present(entry, field, d[field]);
   if (present(entry, 'read_on', d.read_on)) isDate(entry, 'read_on', d.read_on);
   if (d.source_date !== undefined && d.source_date !== 'unknown') isDate(entry, 'source_date', d.source_date);
+  if (d.kind === 'behavioural_run') checkRun(entry, refs);
+}
+
+// A behavioural run is evidence about a model on a day, not about the
+// guidance in general. Both halves of the comparison and the identity that
+// produced them are what make it re-runnable; without either it is an
+// anecdote wearing an evidence record's frontmatter.
+function checkRun(entry, refs) {
+  const d = entry.data;
+  for (const field of ['model', 'harness']) {
+    // Reported under its own rule rather than through present(), so one
+    // missing identity is one finding and not two names for it.
+    if (d[field] === undefined || d[field] === null || String(d[field]).trim() === '') {
+      report(entry.rel, 'run-identity-missing', `a behavioural run records what produced it; '${field}' is not set, so this result cannot be compared with a later one`);
+    }
+  }
+  present(entry, 'verdict', d.verdict);
+  if (present(entry, 'case', d.case)) {
+    const token = resolveRef(entry, 'case', d.case);
+    if (token) refs.add(token);
+  }
+  const runs = Array.isArray(d.runs) ? d.runs : [];
+  const variants = runs.map((r) => r?.variant);
+  for (const wanted of RUN_VARIANTS) {
+    if (!variants.includes(wanted)) {
+      report(entry.rel, 'run-variants-incomplete', `no '${wanted}' run recorded; a case is run with and without the skill, and one half alone is not a comparison`);
+    }
+  }
+  for (const [i, run] of runs.entries()) {
+    present(entry, `runs[${i}].status`, run?.status);
+    present(entry, `runs[${i}].exit_code`, run?.exit_code);
+  }
+}
+
+// A case is the prompt plus what a reviewer judges the answers against. The
+// '## Task' section is sent verbatim, so a case without one has no prompt.
+function checkCase(entry, refs) {
+  const d = entry.data;
+  if (present(entry, 'id', d.id) && d.id !== entry.id) {
+    report(entry.rel, 'id-filename-mismatch', `frontmatter id is '${d.id}' but the filename stem is '${entry.id}'`);
+  }
+  present(entry, 'title', d.title);
+  present(entry, 'rubric', d.rubric);
+  if (present(entry, 'status', d.status) && !STATUSES.includes(d.status)) {
+    report(entry.rel, 'status-unknown', `status '${d.status}' is not one of ${STATUSES.join(', ')}`);
+  }
+  if (present(entry, 'skill', d.skill)) {
+    const token = resolveRef(entry, 'skill', d.skill);
+    if (token) refs.add(token);
+  }
+  if (!/^##\s+Task\s*$/m.test(entry.text)) {
+    report(entry.rel, 'case-task-missing', "no '## Task' section; that section is the prompt sent to the agent, so there is nothing to run");
+  }
 }
 
 // ----------------------------------------------------------- prose links
@@ -297,9 +357,10 @@ const LINK = /\[[^\]]*\]\(\s*<?([^)>\s]+)>?(?:\s+["'][^)]*["'])?\s*\)/g;
 function contentToken(absolute) {
   const rel = relative(root, absolute);
   for (const [kind, toPath] of Object.entries(KIND_PATH)) {
+    const dir = FLAT_DIR[kind];
     const id = kind === 'skill'
       ? (rel.startsWith(`skills${sep}`) && rel.endsWith(`${sep}SKILL.md`) ? rel.slice(7, -('/SKILL.md'.length)) : null)
-      : (rel.startsWith(`${kind}${sep}`) && rel.endsWith('.md') ? rel.slice(kind.length + 1, -3) : null);
+      : (rel.startsWith(`${dir}${sep}`) && rel.endsWith('.md') ? rel.slice(dir.length + 1, -3) : null);
     if (id && join(root, toPath(id)) === absolute) return `${kind}:${id}`;
   }
   return null;
@@ -392,7 +453,8 @@ for (const entry of entries) {
   refsByToken.set(entry.token, refs);
   if (entry.kind === 'skill') checkSkill(entry);
   if (entry.kind === 'knowledge') checkKnowledge(entry, refs);
-  if (entry.kind === 'evidence') checkEvidence(entry);
+  if (entry.kind === 'case') checkCase(entry, refs);
+  if (entry.kind === 'evidence') checkEvidence(entry, refs);
 }
 const linksChecked = checkLinks(entries.filter((e) => e.data), refsByToken);
 const filesScanned = scanForLocalPaths();
@@ -404,7 +466,7 @@ const counted = (kind, noun) => {
 const refsResolved = [...refsByToken.values()].reduce((n, s) => n + s.size, 0);
 
 if (findings.length === 0) {
-  console.log(`GREEN  ${counted('skill', 'skill')}, ${counted('knowledge', 'knowledge entry')}, ${counted('evidence', 'evidence record')}`);
+  console.log(`GREEN  ${counted('skill', 'skill')}, ${counted('knowledge', 'knowledge entry')}, ${counted('case', 'case')}, ${counted('evidence', 'evidence record')}`);
   console.log(`       ${refsResolved} typed refs resolved, ${linksChecked} prose links checked, ${filesScanned} files scanned for local paths`);
   process.exit(0);
 }
