@@ -5,7 +5,7 @@ cap_tokens: 1200
 
 The public product of R-14: skills and supporting knowledge for leading
 long-horizon agent teams. The plan, directive and research live in Crew at
-`~/projects/crew/projects/r14/`; the work is tracked in Helmo under project
+the Crew estate under its R-14 project directory; the work is tracked under project
 `R-14`. **Nothing from those two places is copied here** — the boundary is
 [PUBLIC-BOUNDARY.md](PUBLIC-BOUNDARY.md), and it is held from the first
 commit because the whole history is intended for publication.
@@ -43,7 +43,12 @@ more content in its image without that review.
 
 ## Remote
 
-`github.com/arthurcoulston/agent-team-skills`, **private**. Sync with
-`node ~/projects/crew/tools/publishing/sync.mjs /Users/arthurcoulston/projects/agent-team-skills`
-— it refuses to push anywhere it cannot read as private. Publication, when it
-comes, goes through Crew's `PUBLISHING.md`, not through sync.
+`github.com/arthurcoulston/agent-team-skills`, **private**. Sync with Crew's `tools/publishing/sync.mjs`, giving it this repository's
+absolute path — a bare name resolves against the working directory and can
+report a different repository synced. It refuses to push anywhere it cannot
+read as private. Publication, when it comes, goes through Crew's
+`PUBLISHING.md`, not through sync.
+
+Neither path is written here. This file is inside a repository whose whole
+history is meant for publication, so it carries no path from the machine it
+was written on — Crew's FLEET.md holds the local locations.
