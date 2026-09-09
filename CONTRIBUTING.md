@@ -37,11 +37,20 @@ Structural checks run from a clean checkout with nothing installed:
 
     node tools/check.mjs              format, metadata, references, local paths
     node tools/check-fixtures.mjs     proves those checks can go red
+    node tools/build-views.mjs        regenerates the maps under views/
 
 The first must be green before a change is proposed. The second runs the
 checker against deliberately broken trees under `tools/fixtures/` and requires
 each to fail naming its own defect — so a new rule arrives with a fixture that
 shows it working, and a rule nobody has watched fail does not count as a rule.
+
+A change that adds or retitles an entry changes what the views draw, so
+`build-views.mjs` runs with it and the regenerated views are part of the same
+change. `check.mjs` reports a view whose committed diagram is not what the
+records produce: a map that has drifted from its collection is worse than no
+map, because it is still read. Never edit below a view's generated marker —
+that edit is reverted by the next run, and the disagreement it causes in the
+meantime is silent.
 
 Behavioural cases run the guidance against a task with and without the skill
 loaded:

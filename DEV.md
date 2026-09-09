@@ -26,14 +26,17 @@ path is broken for every reader but us.
 
 Scaffold in progress under H-1165. Landed: the repository, its private
 remote, the boundary and contribution documents, the skill/knowledge/
-evidence layout with one worked example of each ([LAYOUT.md](LAYOUT.md)), and
-the structural checks (`node tools/check.mjs`, proven red by
-`node tools/check-fixtures.mjs`), and the behavioural baseline runner
-(`node tools/run-case.mjs`) with one worked case. Not yet landed: the
-diagramming foundation. The diagram
-framework is Arthur's choice — surveyed with evidence and recommended to him,
-never picked here (his direction, 2026-09-08); the same sitting established
-that he is personally involved in every visual element.
+evidence layout with one worked example of each ([LAYOUT.md](LAYOUT.md)), the
+structural checks (`node tools/check.mjs`, proven red by
+`node tools/check-fixtures.mjs`), the behavioural baseline runner
+(`node tools/run-case.mjs`) with one worked case, and the diagramming
+foundation (`node tools/build-views.mjs`) with one minimal view. Step 2 of the
+plan is complete.
+
+Mermaid is the framework, chosen by Arthur on 2026-09-09 from a survey put to
+him — surveyed with evidence, never picked here. He is personally involved in
+every visual element, so the shipped view is the mechanism working, not a
+calibrated design; real lenses get designed with him in the room.
 
 Tooling is Node with no dependencies and no package.json: a consuming team
 clones and runs, and `npm install` is not a step. The frontmatter parser in
@@ -53,6 +56,21 @@ score — the record lands `verdict: unjudged` for a reviewer who did not run
 it, because a run graded by the machinery that produced it measures nothing.
 Both are load-bearing; adding a scorer here would quietly turn evidence into
 a self-assessment.
+
+Three things about views are load-bearing. A view is a **definition**, not a
+picture: everything below its marker is derived, and `check.mjs` reddens on a
+committed block the records no longer produce — a map that has drifted is
+still read as current. Selection walks relations in **both directions**, or a
+view seeded with a skill draws one node, since relations are recorded on the
+entry that depends on something. And nodes are deliberately **not links**:
+GitHub frames Mermaid under a policy that stops it navigating, so the
+generated index is the navigation, and a session that "fixes" this with
+`click` ships links that silently do nothing where most people read it.
+
+`tools/collection.mjs` holds the layout's vocabulary, including the one list
+of every place a typed ref can appear. Single on purpose: with a copy each,
+the checker could validate a new kind of reference the generator still
+omitted from every map — a map lying by omission, which nothing would catch.
 
 The example content carries `status: exemplar` on purpose. It was written to
 fix the structure, and the research team reviews its claims like any other

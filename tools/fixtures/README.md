@@ -9,6 +9,12 @@ say about it.
 red, naming its own defect). A check nobody has watched fail is not known to
 check anything: these are how that is demonstrated rather than asserted.
 
+Three of them are about views. `stale-view/` holds a diagram generated
+before its collection gained an evidence record: internally valid, no longer
+what the records produce. `view-without-selection/` never says where to start
+walking, and `view-not-generated/` carries a hand-drawn diagram with no
+generated marker at all.
+
 The paths in `local-path/` are fictional and deliberate. They are the one
 place in this repository where a machine-local path is committed, because the
 scan that forbids them everywhere else has to be shown catching one.

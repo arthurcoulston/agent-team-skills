@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Structural checks over a collection tree: metadata format, reference
 // resolution, identifier consistency, prose citations, behavioural cases and
-// the run records they produce, and the scan for machine-local paths that
+// the run records they produce, generated views still agreeing with the
+// records they are drawn from, and the scan for machine-local paths that
 // PUBLIC-BOUNDARY.md forbids.
 //
 //   node tools/check.mjs [root]      (root defaults to the repository)
@@ -10,26 +11,18 @@
 // broken trees under tools/fixtures/ prove each rule can go red; run them
 // with tools/check-fixtures.mjs.
 
-import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join, relative, resolve, dirname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  KIND_PATH, FLAT_DIR, STATUSES, RELATION_TYPES, DATE, IDENTIFIER, TYPED_REF,
+  frontmatter, walk, collectEntries, typedRefs, EDGE_LABELS,
+} from './collection.mjs';
+import { rebuild } from './build-views.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const root = resolve(process.argv[2] ?? join(HERE, '..'));
 
-const KIND_PATH = {
-  knowledge: (id) => join('knowledge', `${id}.md`),
-  evidence: (id) => join('evidence', `${id}.md`),
-  case: (id) => join('cases', `${id}.md`),
-  skill: (id) => join('skills', id, 'SKILL.md'),
-};
-// The kind names a ref uses are singular; two of the directories are not.
-const FLAT_DIR = { knowledge: 'knowledge', evidence: 'evidence', case: 'cases' };
-const STATUSES = ['exemplar', 'draft', 'accepted', 'superseded'];
-const RELATION_TYPES = ['applies_to', 'supports', 'depends_on', 'supersedes'];
-const DATE = /^\d{4}-\d{2}-\d{2}$/;
-const IDENTIFIER = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const TYPED_REF = /^(knowledge|evidence|case|skill):(.+)$/;
 // The two variants a behavioural run compares; a record missing either is not
 // a comparison, and cannot serve as the baseline a later judgement needs.
 const RUN_VARIANTS = ['baseline', 'with-skill'];
@@ -37,9 +30,6 @@ const RUN_VARIANTS = ['baseline', 'with-skill'];
 // What the local-path scan reads: not a list of what may live here, a list of
 // what can be read as text.
 const SCANNED_EXTENSIONS = ['.md', '.mjs', '.js', '.json', '.yml', '.yaml', '.txt'];
-// Fixtures are deliberately broken and carry fictional local paths on
-// purpose; the fixture runner points this checker at each of them directly.
-const SKIPPED = ['.git', 'node_modules', join('tools', 'fixtures')];
 // Holds the local-path patterns as data so this file can state the rule
 // without tripping it. It is the checker's own configuration, so it is read
 // from beside the checker and not from whatever tree is being scanned.
@@ -47,141 +37,6 @@ const PATTERN_FILE = join(HERE, 'local-path-patterns.txt');
 
 const findings = [];
 const report = (file, rule, message) => findings.push({ file, rule, message });
-
-// ---------------------------------------------------------------- YAML
-
-// Enough YAML for the frontmatter LAYOUT.md defines: scalars, nested maps,
-// lists of maps, and folded/literal block scalars. Not a general parser — it
-// is deliberately small so it has no dependency and no surprises.
-function parseYaml(text) {
-  const [value] = parseNode(text.split('\n'), 0, 0);
-  return value ?? {};
-}
-
-const indentOf = (line) => line.length - line.trimStart().length;
-
-function skipBlank(lines, i) {
-  while (i < lines.length && (lines[i].trim() === '' || /^\s*#/.test(lines[i]))) i++;
-  return i;
-}
-
-function parseNode(lines, i, minIndent) {
-  i = skipBlank(lines, i);
-  if (i >= lines.length || indentOf(lines[i]) < minIndent) return [null, i];
-  const indent = indentOf(lines[i]);
-  return lines[i].trimStart().startsWith('- ')
-    ? parseList(lines, i, indent)
-    : parseMap(lines, i, indent);
-}
-
-function parseMap(lines, i, indent) {
-  const out = {};
-  for (;;) {
-    i = skipBlank(lines, i);
-    if (i >= lines.length || indentOf(lines[i]) !== indent) break;
-    const m = /^([A-Za-z_][\w-]*):(?:\s+(.*))?$/.exec(lines[i].trim());
-    if (!m) break;
-    const key = m[1];
-    const rest = (m[2] ?? '').trim();
-    i++;
-    if (['>', '|', '>-', '|-'].includes(rest)) {
-      const parts = [];
-      while (i < lines.length && (lines[i].trim() === '' || indentOf(lines[i]) > indent)) {
-        parts.push(lines[i].trim());
-        i++;
-      }
-      while (parts.length && parts.at(-1) === '') parts.pop();
-      out[key] = rest[0] === '>' ? parts.join(' ').trim() : parts.join('\n');
-    } else if (rest === '') {
-      const [value, next] = parseNode(lines, i, indent + 1);
-      out[key] = value;
-      i = next;
-    } else {
-      out[key] = scalar(rest);
-    }
-  }
-  return [out, i];
-}
-
-function parseList(lines, i, indent) {
-  const out = [];
-  for (;;) {
-    i = skipBlank(lines, i);
-    if (i >= lines.length || indentOf(lines[i]) !== indent) break;
-    if (!lines[i].trimStart().startsWith('- ')) break;
-    const item = [' '.repeat(indent + 2) + lines[i].trimStart().slice(2)];
-    i++;
-    while (i < lines.length) {
-      if (lines[i].trim() === '' || /^\s*#/.test(lines[i])) { item.push(lines[i]); i++; continue; }
-      if (indentOf(lines[i]) <= indent) break;
-      item.push(lines[i]);
-      i++;
-    }
-    if (/^[A-Za-z_][\w-]*:(\s|$)/.test(item[0].trim())) {
-      const [value] = parseNode(item, 0, indent + 2);
-      out.push(value);
-    } else {
-      out.push(scalar(item[0].trim()));
-    }
-  }
-  return [out, i];
-}
-
-function scalar(raw) {
-  let s = raw.trim();
-  const quoted = (s.startsWith('"') && s.endsWith('"')) || (s.startsWith("'") && s.endsWith("'"));
-  if (quoted) return s.slice(1, -1);
-  const comment = s.indexOf(' #');
-  if (comment >= 0) s = s.slice(0, comment).trim();
-  return s;
-}
-
-function frontmatter(text) {
-  const m = /^---\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)/.exec(text);
-  return m ? parseYaml(m[1]) : null;
-}
-
-// ------------------------------------------------------------ discovery
-
-function listDir(dir) {
-  return existsSync(dir) ? readdirSync(dir).sort() : [];
-}
-
-function walk(dir, out = []) {
-  for (const name of listDir(dir)) {
-    const path = join(dir, name);
-    const rel = relative(root, path);
-    if (SKIPPED.some((s) => rel === s || rel.startsWith(s + sep))) continue;
-    if (statSync(path).isDirectory()) walk(path, out);
-    else out.push(path);
-  }
-  return out;
-}
-
-function collectEntries() {
-  const entries = [];
-  for (const name of listDir(join(root, 'skills'))) {
-    const dir = join(root, 'skills', name);
-    if (!statSync(dir).isDirectory()) continue;
-    const path = join(dir, 'SKILL.md');
-    if (existsSync(path)) entries.push({ kind: 'skill', id: name, path });
-    else report(relative(root, dir), 'skill-entrypoint-missing', 'skill directory has no SKILL.md');
-  }
-  for (const [kind, dir] of Object.entries(FLAT_DIR)) {
-    for (const name of listDir(join(root, dir))) {
-      if (!name.endsWith('.md')) continue;
-      entries.push({ kind, id: name.slice(0, -3), path: join(root, dir, name) });
-    }
-  }
-  for (const entry of entries) {
-    entry.rel = relative(root, entry.path);
-    entry.text = readFileSync(entry.path, 'utf8');
-    entry.data = frontmatter(entry.text);
-    entry.token = `${entry.kind}:${entry.id}`;
-    if (!entry.data) report(entry.rel, 'frontmatter-missing', 'no YAML frontmatter delimited by ---');
-  }
-  return entries;
-}
 
 // -------------------------------------------------------------- metadata
 
@@ -204,7 +59,7 @@ const isDate = (entry, field, value) => {
 function resolveRef(entry, field, ref) {
   const m = TYPED_REF.exec(String(ref));
   if (!m) {
-    report(entry.rel, 'reference-malformed', `'${field}' is '${ref}', not <knowledge|evidence|skill>:<id>`);
+    report(entry.rel, 'reference-malformed', `'${field}' is '${ref}', not <${Object.keys(KIND_PATH).join('|')}>:<id>`);
     return null;
   }
   const [, kind, id] = m;
@@ -214,6 +69,22 @@ function resolveRef(entry, field, ref) {
     return null;
   }
   return `${kind}:${id}`;
+}
+
+// Every typed ref in the frontmatter, resolved once, wherever it lives.
+// The per-kind checks below judge everything else about the field; they no
+// longer each carry their own copy of where refs are found, so a new kind of
+// reference reaches the checker and the generated views from one edit in
+// collection.mjs.
+function resolveAll(entry, refs) {
+  const byField = new Map();
+  for (const { field, ref } of typedRefs(entry.data)) {
+    const token = resolveRef(entry, field, ref);
+    if (!token) continue;
+    refs.add(token);
+    byField.set(field, token);
+  }
+  return byField;
 }
 
 function checkIdentifier(entry) {
@@ -230,7 +101,7 @@ function checkSkill(entry) {
   present(entry, 'description', d.description);
 }
 
-function checkKnowledge(entry, refs) {
+function checkKnowledge(entry, resolved) {
   const d = entry.data;
   if (present(entry, 'id', d.id) && d.id !== entry.id) {
     report(entry.rel, 'id-filename-mismatch', `frontmatter id is '${d.id}' but the filename stem is '${entry.id}'`);
@@ -245,8 +116,6 @@ function checkKnowledge(entry, refs) {
     if (!RELATION_TYPES.includes(rel?.type)) {
       report(entry.rel, 'relation-type-unknown', `${where}.type is '${rel?.type}', not one of ${RELATION_TYPES.join(', ')}`);
     }
-    const token = rel?.to === undefined ? null : resolveRef(entry, `${where}.to`, rel.to);
-    if (token) refs.add(token);
   }
 
   const sources = Array.isArray(d.sources) ? d.sources : [];
@@ -263,9 +132,8 @@ function checkKnowledge(entry, refs) {
       isDate(entry, `${where}.evidence_date`, source.evidence_date);
     }
     if (!present(entry, `${where}.evidence`, source?.evidence)) continue;
-    const token = resolveRef(entry, `${where}.evidence`, source.evidence);
+    const token = resolved.get(`${where}.evidence`);
     if (!token) continue;
-    refs.add(token);
     // The three dates never collapse, so the one date two files both record
     // has to agree between them.
     const record = frontmatter(readFileSync(join(root, KIND_PATH.evidence(token.split(':')[1])), 'utf8'));
@@ -287,7 +155,7 @@ function checkKnowledge(entry, refs) {
   }
 }
 
-function checkEvidence(entry, refs) {
+function checkEvidence(entry) {
   const d = entry.data;
   if (present(entry, 'id', d.id) && d.id !== entry.id) {
     report(entry.rel, 'id-filename-mismatch', `frontmatter id is '${d.id}' but the filename stem is '${entry.id}'`);
@@ -295,14 +163,14 @@ function checkEvidence(entry, refs) {
   for (const field of ['kind', 'source_title', 'read_by', 'method']) present(entry, field, d[field]);
   if (present(entry, 'read_on', d.read_on)) isDate(entry, 'read_on', d.read_on);
   if (d.source_date !== undefined && d.source_date !== 'unknown') isDate(entry, 'source_date', d.source_date);
-  if (d.kind === 'behavioural_run') checkRun(entry, refs);
+  if (d.kind === 'behavioural_run') checkRun(entry);
 }
 
 // A behavioural run is evidence about a model on a day, not about the
 // guidance in general. Both halves of the comparison and the identity that
 // produced them are what make it re-runnable; without either it is an
 // anecdote wearing an evidence record's frontmatter.
-function checkRun(entry, refs) {
+function checkRun(entry) {
   const d = entry.data;
   for (const field of ['model', 'harness']) {
     // Reported under its own rule rather than through present(), so one
@@ -312,10 +180,7 @@ function checkRun(entry, refs) {
     }
   }
   present(entry, 'verdict', d.verdict);
-  if (present(entry, 'case', d.case)) {
-    const token = resolveRef(entry, 'case', d.case);
-    if (token) refs.add(token);
-  }
+  present(entry, 'case', d.case);
   const runs = Array.isArray(d.runs) ? d.runs : [];
   const variants = runs.map((r) => r?.variant);
   for (const wanted of RUN_VARIANTS) {
@@ -331,7 +196,7 @@ function checkRun(entry, refs) {
 
 // A case is the prompt plus what a reviewer judges the answers against. The
 // '## Task' section is sent verbatim, so a case without one has no prompt.
-function checkCase(entry, refs) {
+function checkCase(entry) {
   const d = entry.data;
   if (present(entry, 'id', d.id) && d.id !== entry.id) {
     report(entry.rel, 'id-filename-mismatch', `frontmatter id is '${d.id}' but the filename stem is '${entry.id}'`);
@@ -341,13 +206,48 @@ function checkCase(entry, refs) {
   if (present(entry, 'status', d.status) && !STATUSES.includes(d.status)) {
     report(entry.rel, 'status-unknown', `status '${d.status}' is not one of ${STATUSES.join(', ')}`);
   }
-  if (present(entry, 'skill', d.skill)) {
-    const token = resolveRef(entry, 'skill', d.skill);
-    if (token) refs.add(token);
-  }
+  present(entry, 'skill', d.skill);
   if (!/^##\s+Task\s*$/m.test(entry.text)) {
     report(entry.rel, 'case-task-missing', "no '## Task' section; that section is the prompt sent to the agent, so there is nothing to run");
   }
+}
+
+// A view is a definition of what to draw, not a drawing. What it selects is
+// checked here; whether the committed picture still matches the records is
+// checked by regenerating it, because a view that has drifted from its own
+// collection is worse than no view at all.
+function checkView(entry, refs, entries) {
+  const d = entry.data;
+  if (present(entry, 'id', d.id) && d.id !== entry.id) {
+    report(entry.rel, 'id-filename-mismatch', `frontmatter id is '${d.id}' but the filename stem is '${entry.id}'`);
+  }
+  present(entry, 'title', d.title);
+  if (present(entry, 'status', d.status) && !STATUSES.includes(d.status)) {
+    report(entry.rel, 'status-unknown', `status '${d.status}' is not one of ${STATUSES.join(', ')}`);
+  }
+
+  const definition = d.view ?? {};
+  if (!Array.isArray(definition.include) || definition.include.length === 0) {
+    report(entry.rel, 'view-selection-missing', "'view.include' names no entry to start from, so the view selects nothing");
+  }
+  for (const [i, label] of (Array.isArray(definition.follow) ? definition.follow : []).entries()) {
+    if (!EDGE_LABELS.includes(String(label))) {
+      report(entry.rel, 'view-follow-unknown', `view.follow[${i}] is '${label}', not one of ${EDGE_LABELS.join(', ')}`);
+    }
+  }
+  if (definition.depth !== undefined && !/^\d+$/.test(String(definition.depth))) {
+    report(entry.rel, 'view-depth-malformed', `'view.depth' is '${definition.depth}', not a whole number of steps`);
+  }
+
+  const built = rebuild(root, entries, entry);
+  if (built.missing) {
+    report(entry.rel, 'view-generated-block-missing', 'no generated marker, so the diagram and its link index have nowhere to go; run node tools/build-views.mjs');
+  } else if (built.stale) {
+    report(entry.rel, 'view-stale', 'the committed diagram and index are not what these records generate; run node tools/build-views.mjs');
+  }
+  // What the view drew is what it cites. Recording it here is what lets the
+  // prose-link rule hold the generated index to exactly its own selection.
+  for (const token of built.nodes) refs.add(token);
 }
 
 // ----------------------------------------------------------- prose links
@@ -444,17 +344,21 @@ function scanForLocalPaths() {
 
 // ------------------------------------------------------------------ run
 
-const entries = collectEntries();
+const { entries, problems } = collectEntries(root);
+for (const { file, rule, message } of problems) report(file, rule, message);
+
 const refsByToken = new Map();
 for (const entry of entries) {
   if (!entry.data) continue;
   checkIdentifier(entry);
   const refs = new Set();
   refsByToken.set(entry.token, refs);
+  const resolved = resolveAll(entry, refs);
   if (entry.kind === 'skill') checkSkill(entry);
-  if (entry.kind === 'knowledge') checkKnowledge(entry, refs);
-  if (entry.kind === 'case') checkCase(entry, refs);
-  if (entry.kind === 'evidence') checkEvidence(entry, refs);
+  if (entry.kind === 'knowledge') checkKnowledge(entry, resolved);
+  if (entry.kind === 'case') checkCase(entry);
+  if (entry.kind === 'evidence') checkEvidence(entry);
+  if (entry.kind === 'view') checkView(entry, refs, entries);
 }
 const linksChecked = checkLinks(entries.filter((e) => e.data), refsByToken);
 const filesScanned = scanForLocalPaths();
@@ -466,7 +370,7 @@ const counted = (kind, noun) => {
 const refsResolved = [...refsByToken.values()].reduce((n, s) => n + s.size, 0);
 
 if (findings.length === 0) {
-  console.log(`GREEN  ${counted('skill', 'skill')}, ${counted('knowledge', 'knowledge entry')}, ${counted('case', 'case')}, ${counted('evidence', 'evidence record')}`);
+  console.log(`GREEN  ${counted('skill', 'skill')}, ${counted('knowledge', 'knowledge entry')}, ${counted('case', 'case')}, ${counted('evidence', 'evidence record')}, ${counted('view', 'view')}`);
   console.log(`       ${refsResolved} typed refs resolved, ${linksChecked} prose links checked, ${filesScanned} files scanned for local paths`);
   process.exit(0);
 }
