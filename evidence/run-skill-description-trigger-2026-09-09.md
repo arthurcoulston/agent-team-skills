@@ -18,7 +18,7 @@ runs:
     status: ok
     exit_code: 0
     duration_ms: 5078
-verdict: unjudged
+verdict: guidance-not-shown
 ---
 
 # Run record — Does an agent write a description that names the occasion, not the subject?
@@ -58,4 +58,31 @@ Exit 0, 5.1s.
 ```
 Review migration correctness and safe rollout before merge — reversibility against the schema and safety under mixed old/new app versions during deploy.
 ```
+
+## Reviewer verdict
+
+Judged by proof (did not run this case) against `cases/skill-description-trigger.md`'s rubric, 2026-09-09.
+
+**Occasion vs. subject — the rubric's central test — goes the wrong way.** The
+baseline answer opens with "Use when reviewing a database migration before
+merge," an explicit occasion-first frame despite having no guidance to draw
+it from. The with-skill answer, "Review migration correctness and safe
+rollout before merge," reads as a topic label with a trailing condition, not
+an occasion a mid-task agent matches against. On this run the unguided
+answer names the occasion more clearly than the guided one does — the
+opposite of what the skill asks for.
+
+**"Puts the case that matters most first" is not exercised by this task.**
+The task gives one occasion (reviewing a migration) with three sub-checks,
+not several candidate trigger occasions to rank and order. Neither answer's
+difference from the other can be attributed to this criterion; it is a gap
+in this exemplar case's design, not a result about the guidance.
+
+**Both answers stay one line.** No difference here.
+
+Net: on this single run, the guidance did not produce the intended effect,
+and if anything moved the answer in the wrong direction on the rubric's main
+criterion. Consistent with CONTRIBUTING.md's own limit — one pair, one
+model, one day does not separate the guidance's effect from the variation the
+model would show anyway — this judges the run, not the guidance's transfer.
 
