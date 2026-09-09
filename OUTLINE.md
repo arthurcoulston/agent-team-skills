@@ -296,8 +296,13 @@ explore alongside occasions, lifecycle, architecture and failure modes. A
 knowledge entry can participate in several of them without duplicating its
 substance or evidence.
 
-Use context optimization and reconciliation after changed direction as
-possible early probes. They can test whether the product equips a team to
-act, whether evidence reaches the decision and whether the organization of
-the knowledge supports several useful routes. They remain candidate probes;
-the outline is not an accepted taxonomy or a validated set of skills.
+Begin with the foundational skill of writing instructions that other agents
+consume. Team leaders need this expertise to transfer intent and knowledge;
+the collection needs it to author all its guidance. Develop a method for
+preserving requirements, selecting context, writing precise instructions,
+removing padding and testing downstream behavior. The
+[draft authoring skill](skills/writing-agent-instructions/SKILL.md) and its
+[evaluation protocol](knowledge/evaluating-instruction-authoring.md) begin
+that work. Broader topic exemplars follow calibration of this foundation.
+The outline remains a provisional capability map, not an accepted taxonomy
+or a validated set of skills.

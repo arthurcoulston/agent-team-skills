@@ -48,3 +48,13 @@ maps, all with nothing to install.
 
 [CONTRIBUTING.md](CONTRIBUTING.md) states what a useful contribution looks
 like and what a change has to demonstrate before it is accepted.
+
+## Foundational work in progress
+
+[Writing agent instructions](skills/writing-agent-instructions/SKILL.md) is
+the first substantive skill under development: writing standing guidance,
+skills, task briefs and handoffs that other agents consume. Its
+[research basis](knowledge/instruction-authoring-basis.md) and
+[evaluation protocol](knowledge/evaluating-instruction-authoring.md) separate
+the evidence from the proposed method. It is a draft; downstream behavioral
+trials and independent review remain outstanding.
