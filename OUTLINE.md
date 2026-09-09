@@ -3,304 +3,301 @@ status: draft
 revised: 2026-09-09
 ---
 
-# Outline — knowledge for leading agent teams
+# Outline — capabilities for sustained agent team leadership
 
-This collection helps agents create, lead and improve teams that work across
-tasks and sessions. It serves founders, ongoing team leaders and leaders
-coordinating several teams. Their tools, models, authority and relationship
-to humans may differ.
+Build a team that can pursue an open-ended directive autonomously over an
+indefinite operating life. Sustain useful work, preserve direction, recover
+from failure and improve the team's capabilities as its work and environment
+change.
 
-The proposed structure separates three jobs:
+This is the ambition of the collection and the frontier it follows. Much
+relevant research concerns bounded tasks, coding systems or simulations;
+success in those settings does not establish indefinite autonomous
+operation. Advance with humility about the evidence, curiosity about new
+possibilities and ambition for what your team can achieve.
 
-- **Coverage:** a map of enduring responsibilities shows what the collection
-  needs to know and where its evidence is missing.
-- **Action:** skills help with specific decisions or procedures under stated
-  conditions. Their entrypoints support selective discovery and loading.
-- **Navigation:** paths such as founding a team, changing direction or
-  recovering from a failure connect the relevant material.
+The collection must translate that research into expertise you can act on:
+what to establish, how to operate it, how to test it and when to change it.
+Track the assumptions behind each method and evaluate its effects across
+repeated work, accumulating state, failures and changing conditions. Keep
+improving the team's ability to pursue its directive beyond the completion
+of any individual task or release.
 
-The eight areas below are a provisional coverage map. They are neither eight
-skills nor eight stages every team passes through. A skill may draw on several
-areas, and a reader should be able to find it without first learning this map.
+This outline describes capabilities the final product must equip you to
+build and maintain. The methods still need research and validation. Direct
+language expresses the responsibility and intended result; supporting
+evidence establishes which methods justify confidence under which conditions.
 
-## Why this structure
+## Organize the knowledge through multiple views
 
-A lifecycle explains how to get started, but recurring responsibilities do
-not remain in one phase. A catalog of occasions is useful when a condition
-and a result are clear, but broad subjects such as context and authority are
-not occasions. A technical architecture explains mechanisms but can hide
-purpose and strategic choices. A failure taxonomy helps diagnose problems
-but is incomplete as a guide to building a successful team.
+Capabilities, occasions, lifecycle, system architecture, failure modes and
+task catalogs remain candidate ways to organize the same knowledge. Combine
+tags, categories and relationships where they help people and agents find,
+understand and apply it. The eight areas below are one working view; they do
+not select a primary taxonomy, fix skill boundaries or exclude another view.
 
-A map plus task entrypoints is the current recommendation because it keeps
-coverage visible while allowing several routes into the material. Its
-strongest simpler rival is a searchable task catalog with labels. The map
-must earn its additional maintenance cost through clearer coverage and
-navigation; no comparative navigation test has yet established that it does.
+Keep the distinctions between subject coverage, skill activation and
+navigation explicit. A reader may find a skill through a symptom, a task, a
+stage of development or an operating responsibility. Each route should
+reach the same underlying knowledge and evidence.
 
-The distinction between reference, explanation and task assistance has a
-useful precedent in [Diátaxis](https://diataxis.fr/start-here/). The
-[Agent Skills specification](https://agentskills.io/specification) separately
-defines discovery metadata and content loaded on activation. These support
-separating the jobs; they do not prove this particular taxonomy.
+The [Agent Skills specification](https://agentskills.io/specification)
+separates discovery metadata from content loaded on activation.
+[Diátaxis](https://diataxis.fr/start-here/) distinguishes different needs for
+documentation. These are useful precedents, not prescriptions for a single
+organization of this collection.
 
-## 1. Direction, priorities and value
+## 1. Keep the team directed toward lasting value
 
-**What is worth pursuing, for whom, and when should it change or end?**
+**You must preserve the intent of the directive while continually choosing
+work that advances it. Test whether the team's outcomes remain useful and
+redirect effort when they do not.**
 
-Cover purpose, intended beneficiaries, desired outcomes, constraints,
-competing opportunities, priority selection, uncertainty and the comparison
-of expected with realized value. Include the choice to continue, redirect,
-defer or stop existing work. Distinguish choosing a worthwhile outcome from
-executing an already selected commitment.
+The product must equip you to:
 
-Candidate decisions and procedures:
+- Translate purpose, intended beneficiaries and constraints into operating
+  direction and observable outcomes.
+- Select worthwhile work against alternatives, uncertainty and available
+  capacity; keep a supply of justified next actions.
+- Compare realized value with expectations and detect drift before activity
+  becomes a substitute for progress.
+- Propagate changed direction into commitments, criteria, roles and context.
+- Retire exhausted or ineffective work and renew the team's approach to its
+  continuing directive.
 
-- Interpret a new or changed directive and identify unresolved assumptions.
-- Compare proposed work with alternatives and available capacity.
-- Reassess continuing work against outcomes and its opportunity cost.
-- Translate a change of direction into affected commitments and criteria.
+For indefinite pursuit, build the capacity to select and reassess work as
+well as execute it. Completion of one task must leave the team able to
+recognize and pursue its next worthwhile contribution.
 
-Open research: how can a team recognize poor external value when its internal
-execution looks successful? How should it compare uncertain opportunities
-without turning a rubric into an unjustified numerical ranking? Which
-decisions remain with a human or another authority?
+## 2. Build and adapt the organization
 
-## 2. Organization and delegation
+**You must shape the team's roles, models, tools and coordination around the
+work. Give each responsibility a capable owner and revise the arrangement as
+the team's demands and capabilities change.**
 
-**What arrangement of agents, tools and workflows can do this work well?**
+The product must equip you to:
 
-Cover the choice between one agent, a fixed workflow and a team; task
-decomposition; persistent and temporary responsibilities; ownership;
-specialization; model selection; coordination topology; and integration of
-expert contributions. Include adding, combining and retiring roles.
+- Choose single-agent execution, tools, fixed workflows or delegation for
+  each class of work within the continuing team.
+- Establish responsibilities, decision rights, inputs, outputs and durable
+  ownership; distinguish persistent roles from temporary assistance.
+- Separate work where independent effort helps and integrate it where
+  dependencies demand shared judgment.
+- Preserve useful expertise and disagreement when combining contributions.
+- Add, combine, replace and retire roles without losing commitments or
+  accumulated knowledge.
 
-Candidate decisions and procedures:
+For indefinite pursuit, make organizational adaptation an operating
+capability. A roster that succeeds on an initial workload must remain open
+to revision as the directive generates new demands.
 
-- Decide whether delegation is likely to help this task.
-- Define responsibilities, inputs, outputs and decision rights.
-- Choose how independent work is combined and disagreement resolved.
-- Reconsider the organization after a task or model change.
-
-Open research: when does context separation repay coordination cost? How can
-a team use its strongest expertise without losing useful challenge? Which
-responsibilities need persistent state?
-
-Architecture benefits vary with task structure in controlled studies, and
-free interaction can dilute expert contributions. These are reasons to test
-arrangements rather than prescribe a universal roster.
+Controlled results show that architecture benefits depend on task structure
+and that free interaction can dilute expertise. Use these findings to test
+arrangements under your conditions.
 [Scaling Agent Systems, v3](https://arxiv.org/abs/2512.08296v3);
 [Teams Hold Experts Back, v4](https://arxiv.org/abs/2602.01011v4).
 
-## 3. Context and memory
+## 3. Optimize agent context and memory
 
-**What must each participant know, where does it come from, and what survives?**
+**You, your team and your apparatus must track, test, cultivate and optimize
+agent context and memory. Tailor every loaded context to the work before it,
+preserve what future work needs and verify that changes improve behavior.**
 
-Cover standing instructions, selective retrieval, skill descriptions,
-supporting references, tool output, shared and private state, provenance,
-freshness, compaction and continuity across sessions. Distinguish current
-facts, historical evidence, pending work and reusable procedural knowledge.
+The product must equip you to:
 
-Candidate decisions and procedures:
+- Design what each role and run receives, can discover and retrieves when
+  needed, including instructions, skills, references, state and tool output.
+- Author and test context that contributes useful expertise and directs the
+  agent toward the intended result.
+- Maintain provenance and freshness; reconcile stale, conflicting or
+  redundant information before it degrades decisions.
+- Preserve commitments, evidence and necessary reasoning across compaction,
+  interruption and session changes.
+- Cultivate shared and role-specific memory, retaining useful experience
+  while controlling contradiction, accumulation and retrieval cost.
+- Reevaluate context after changes to the task, model, tools or harness.
 
-- Design what a role or task can discover and what it actually loads.
-- Write and test a skill entrypoint and its supporting material.
-- Restore work after a context reset without treating an old summary as
-  current reality.
-- Reconcile contradictory or stale context and preserve necessary evidence.
+For indefinite pursuit, optimize the continuing flow of information as well
+as the initial prompt. Measure what agents actually receive, retain and use
+across many runs, and correct failures at their source.
 
-Open research: which knowledge adds value beyond the consuming model? When
-does instruction help, distract or constrain a better solution? What must a
-summary retain for later decisions? How should shared knowledge remain
-consistent while different agents receive different slices?
-
-Curated skills can improve performance, while public skill studies also find
-little benefit or negative average effects. Applicability must therefore
-include the task, model and harness, with a no-skill baseline.
+Curated skills can help, while public skill studies also find little benefit
+or negative effects. Establish benefit against a baseline on the consuming
+model and harness; relevant content alone does not prove useful context.
 [SkillsBench, v4](https://arxiv.org/abs/2602.12670v4);
 [SWE-Skills-Bench](https://arxiv.org/abs/2603.15401v1);
 [Signal or Noise?](https://arxiv.org/abs/2608.23067v1).
 
-## 4. Work and coordination
+## 4. Turn direction into coordinated work
 
-**How do commitments become accepted results across dependencies and sessions?**
+**You must turn commitments into accepted results and keep the whole team
+coordinated as work progresses, dependencies change and sessions end.**
 
-Cover decomposition of selected work, plans, readiness, dependencies,
-ownership, shared-state updates, handoffs, integration, acceptance,
-cancellation and propagation of changed decisions. Distinguish an agent's
-report, a persisted artifact and a result its consumer can actually use.
+The product must equip you to:
 
-Candidate decisions and procedures:
+- Decompose selected work into executable commitments with owners, readiness
+  conditions, dependencies and observable completion criteria.
+- Coordinate independent efforts and resolve conflicts before integration.
+- Reconcile reported progress with actual artifacts and current state.
+- Deliver outputs where their consumers can find, interpret and use them.
+- Carry work across sessions and ownership changes with actionable handoffs.
+- Revise or cancel affected commitments when direction or assumptions change.
 
-- Turn an objective into work with observable completion conditions.
-- Coordinate independent work while exposing dependencies and conflicts.
-- Reconcile claimed progress with actual artifacts and current state.
-- Deliver a handoff that a fresh recipient can act on.
-- Revise or cancel affected work when assumptions change.
+For indefinite pursuit, maintain coordination across successive projects and
+generations of agents. Detect stranded dependencies and missing deliveries
+even when every participant reports success or no new message arrives.
 
-Open research: how can a coordinator detect missing work or silent failure?
-What is the right balance between shared state and messages? Who resolves a
-disagreement about completion or meaning across team boundaries?
+MAST supplies failure cases across system design, inter-agent alignment and
+verification that can inform this work. Test remedies against the failures
+they are intended to correct. [MAST, v3](https://arxiv.org/abs/2503.13657v3).
 
-The MAST failure taxonomy gives useful diagnostic coverage of design,
-alignment and verification problems. It is a source of cases to investigate,
-not proof of a particular remedy. [MAST, v3](https://arxiv.org/abs/2503.13657v3).
+## 5. Establish and maintain justified confidence
 
-## 5. Evaluation and assurance
+**You must establish evidence that the team produces useful outcomes,
+operates reliably and improves when changed. Make that evidence strong
+enough for the decisions it supports and keep testing it against reality.**
 
-**What evidence establishes value, correctness, reliability and improvement?**
+The product must equip you to:
 
-Cover acceptance criteria, task and system evaluation, verifier quality,
-independent review, repeated trials, robustness, failure severity, calibration,
-trace inspection, external feedback and cost. Evaluate the collection's own
-guidance as well as the teams that use it.
+- Define acceptance criteria and evaluation methods suited to intended use.
+- Evaluate outputs, coordination, strategic choices and operating capability.
+- Calibrate reviewers and verifiers; investigate disagreement with observed
+  results and expose shared blind spots.
+- Compare changes against baselines, repeat trials and retain failures.
+- Test robustness, recovery, drift and failure consequences alongside quality,
+  time, cost and human intervention.
+- State the conditions and observation period behind every reliability claim.
 
-Candidate decisions and procedures:
+For indefinite pursuit, use ongoing evidence to renew confidence. Extend
+evaluation across repeated operation and changing conditions; a successful
+task or finite trial cannot establish unlimited future reliability.
 
-- Define evidence appropriate to the intended use and consequences.
-- Test a proposed skill, context change or team arrangement against a baseline.
-- Diagnose disagreement between a grader, a report and an actual result.
-- Decide whether evidence supports release, continued use or revision.
+Reliability research distinguishes repeatability, robustness and predictable
+failure from average task accuracy, within a limited set of evaluated
+settings. [Agent Reliability, v3](https://arxiv.org/abs/2602.16666v3).
 
-Open research: how should a team evaluate work that lacks a deterministic
-answer? How can reviewers avoid shared blind spots? What evidence supports
-claims about a continuing organization rather than one completed task?
+## 6. Make authority and interfaces work
 
-Repeated success, robustness and predictable failure need attention beyond
-mean task accuracy. The available studies still cover a limited range of
-tasks and scaffolds. [Agent Reliability, v3](https://arxiv.org/abs/2602.16666v3).
+**You must make decision and action boundaries explicit, keep necessary
+information moving and establish effective participation by humans and
+outside systems. Operate within the authority your team actually holds.**
 
-## 6. Authority and interfaces
+The product must equip you to:
 
-**Who may decide or act, and how do humans and outside systems participate?**
+- Map identity, permissions, decision rights and external commitments.
+- Separate useful incoming information from instructions authorized to
+  change the team's behavior.
+- Design channels that deliver decisions, requests and notifications to
+  their intended recipients and expose failed delivery.
+- Give a responsible decision-maker the evidence and context needed to act.
+- Distinguish standing controls, temporary calibration and missing
+  capabilities; improve each through its appropriate authority.
+- Identify human dependencies and establish continuity when a person is
+  unavailable.
 
-Cover permissions, identity, trusted instructions versus external data,
-delegated authority, human direction and calibration, notifications,
-escalation, external commitments and interfaces with other teams. Distinguish
-temporary calibration gates from standing authority and capability limits.
+For indefinite pursuit, prevent quiet dependence on someone remembering to
+intervene. Make necessary human contributions visible, dependable and
+proportionate as the team's autonomy develops.
 
-Candidate decisions and procedures:
-
-- Map the actual decision and action boundaries of a consuming system.
-- Design an external channel that separates information from authorization.
-- Request a decision with enough context for the responsible party to act.
-- Review whether a gate is still serving its stated purpose.
-
-Open research: how does necessary human involvement remain effective as
-routine work becomes autonomous? How does a team detect that a decision was
-not received? What can be delegated when the human is absent?
-
-The collection supplies expertise, not additional permission. Its guidance
-must respect the consuming system's instruction hierarchy and enforced
-controls. Protocol guidance illustrates why identity, access and intended
-authority need separate treatment.
+Apply the consuming system's instruction hierarchy and enforced controls.
+Protocol guidance helps distinguish identity, access and intended authority.
 [MCP security best practices](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices).
 
-## 7. Operations and resources
+## 7. Sustain operation and control resources
 
-**How does work keep running, pause, recover and fit available capacity?**
+**You must keep the team able to pursue its directive, detect and recover
+from failure, and manage the resources that continuing operation requires.**
 
-Cover runtime liveness, durable execution, scheduling, wake conditions,
-blocked and idle states, interruption, bounded retries, repair, cost,
-latency, capacity and operating visibility. Separate a healthy pause from a
-failure to notice available work.
+The product must equip you to:
 
-Candidate decisions and procedures:
+- Establish durable execution, operating visibility and reliable wake and
+  continuation mechanisms.
+- Distinguish useful activity, intentional waiting, blocked work and failure.
+- Detect stalled capabilities, missing signals and repeatedly failing work.
+- Recover within clear authority and retry limits; escalate when the next
+  recovery step requires a different capability or decision.
+- Preserve recoverable state through interruptions, outages and migrations.
+- Allocate capacity and control cost in relation to useful outcomes.
+- Maintain visibility of aging dependencies and restore readiness after
+  interruption.
 
-- Establish readiness and completion conditions for an operating loop.
-- Diagnose a stalled or repeatedly failing capability.
-- Recover within authority and stop when the repair boundary is reached.
-- Allocate capacity and measure useful outcomes per unit of effort.
-- Arrange continued visibility of unresolved dependencies.
+For indefinite pursuit, design continuity across task boundaries, resource
+windows and failures. Bound individual actions and repair attempts while
+maintaining responsibility for the team's continuing ability to act.
 
-Open research: how should urgency, aging and change signals interact? What
-should survive an interrupted action? When should a capability retry, change
-approach, wait or escalate? How do operating costs affect strategic choices?
+## 8. Learn and evolve without losing what works
 
-## 8. Learning and evolution
+**You must turn experience and new research into better future behavior.
+Cultivate the team and its apparatus, verify improvements and preserve the
+capabilities that change could otherwise damage.**
 
-**How does experience or new knowledge improve future behavior without degrading it?**
+The product must equip you to:
 
-Cover incident learning, causal hypotheses, external research, proposed
-changes, transfer across tasks and teams, regression detection, model and
-harness upgrades, source freshness, compatibility and retirement of advice.
-Separate retaining a memory from establishing an improvement.
+- Investigate repeated failures and compare plausible causes before adopting
+  a remedy.
+- Turn observations into scoped changes with observable expected effects.
+- Test transfer beyond the originating case and detect regressions.
+- Decide which improvements belong to a task, role, team or shared library.
+- Follow changes in research, models, tools and operating conditions; update
+  affected methods and compatibility claims.
+- Consolidate accumulated guidance and retire superseded advice while
+  preserving its evidence.
 
-Candidate decisions and procedures:
+For indefinite pursuit, make adaptation itself dependable. Retaining a
+lesson or rewriting instructions is only a step; establish that later work
+actually improves and that the improvement survives further change.
 
-- Investigate a repeated failure and compare plausible causes.
-- Turn an observation into a scoped, testable change.
-- Test whether a local improvement transfers and whether prior behavior holds.
-- Reassess guidance when its source, model, tools or conditions change.
-- Retire superseded knowledge while preserving its evidence.
-
-Open research: how can a team avoid accumulating rules that help only their
-originating case? How does it preserve useful detail without accumulating
-contradictions? Which improvements belong locally and which generalize?
-
-Recent transfer research distinguishes encoding experience, finding it later
-and using it effectively; improvement is not automatic. Engineering accounts
-also show that stronger models can make earlier scaffolding unnecessary.
-[EvoAgentBench](https://arxiv.org/abs/2607.05202v1);
+Transfer research distinguishes encoding, retrieving and using experience.
+Engineering accounts also show that model improvements can remove the need
+for earlier scaffolding. [EvoAgentBench](https://arxiv.org/abs/2607.05202v1);
 [Harness design for long-running applications](https://www.anthropic.com/engineering/harness-design-long-running-apps).
 
-## From coverage to a usable skill
+## Turn the capabilities into usable guidance
 
-A candidate skill needs a recognizable task or decision, applicable
-conditions, needed inputs, a useful result and an observable way to evaluate
-it. These are design questions, not a new mandatory file schema. Its
-supporting knowledge carries evidence, counterexamples and uncertainty.
+Each skill must give a leader a method for a recognizable task or decision:
+the applicable conditions, needed inputs, concrete actions, intended result
+and evidence for judging whether it worked. Its supporting knowledge must
+explain the basis, limitations and observations that should change the
+recommendation. Where evidence is incomplete, provide a scoped action or
+experiment that can produce a justified next decision.
 
-For example, **understanding direction is an enduring responsibility**.
-It can lead to different procedures:
+Preserving direction, for example, requires different procedures under
+different conditions:
 
-| Condition | Task | Expected result |
+| Condition | Action | Result |
 |---|---|---|
-| No team exists | Interpret purpose, test the need for a team and establish initial commitments. | An initial operating arrangement justified against alternatives and constraints. |
-| An ordinary run begins | Restore current commitments and inspect relevant changes. | The next authorized action, or a justified wait. |
-| Direction changes during active work | Identify consequences and reconcile affected commitments. | Updated work, criteria and context, with conflicts resolved or made explicit. |
-| Outcomes no longer justify effort | Reassess continued value against alternatives. | A reasoned continue, redirect, defer or stop decision. |
+| No team exists | Establish operating direction, authority, organization and initial commitments. | A team ready to begin justified work. |
+| An ordinary run begins | Restore commitments, inspect relevant changes and act. | Progress on the directive or an intentional wait with a reliable continuation condition. |
+| Direction changes during active work | Reconcile affected commitments, criteria, roles and context. | The team acts on current direction and resolves conflicts. |
+| Outcomes no longer justify effort | Reassess value and alternatives; redirect or retire ineffective work. | Renewed progress toward the continuing directive. |
 
-Reading the directive is an input to these tasks. It does not imply that a
-founding procedure should run at every session start. Initial setup and
-continuation are distinct even in concrete long-running coding systems.
+Reading the directive contributes to all of these procedures. First-time
+setup and recurring leadership remain distinct even when they draw on the
+same knowledge. Concrete long-running harnesses illustrate the need to
+separate initialization from continuation.
 [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents).
 
-## Routes through the same knowledge
+## Develop and test the collection
 
-Founding, routine operation, changing direction, diagnosing a failure and
-evaluating an improvement are candidate paths. Each can cross several areas.
-The initial conceptual lenses remain useful:
+Translate each research finding from its source conditions into the team's
+operating conditions. Record the source task, horizon, model, harness and
+success measure; identify the transferable mechanism; adapt it for continuing
+work; and test the resulting guidance. Follow both new research and use in
+teams so that the collection changes with the field.
 
-- **Context:** how instructions, facts, state and learning reach participants.
-- **Intention:** how purpose informs choices, work and assessment of value.
-- **Organization:** how responsibilities, authority and dependencies connect.
+Evaluate discovery separately from behavioral benefit. Test candidate views
+and useful combinations over the same content, including requests for which
+no skill should load. Keep categories and relationships revisable. The
+current [layout](LAYOUT.md) distinguishes artifact types; additional
+classification and view mechanisms should follow demonstrated needs.
 
-Applicability can vary by scope, work type, maturity, available tools, model
-and human involvement. These are separate from evidential confidence: strong
-evidence under narrow conditions is still narrow.
+The context, intention and organization lenses remain initial views to
+explore alongside occasions, lifecycle, architecture and failure modes. A
+knowledge entry can participate in several of them without duplicating its
+substance or evidence.
 
-The current [layout](LAYOUT.md) distinguishes artifact types. It does not yet
-encode this coverage map or these paths. Candidate labels and relationships
-should be tried on actual entries before extending the schema or generating
-new diagrams. A concept's subject, a skill's trigger and a path's order must
-not silently become the same relation.
-
-## Evidence and validation still needed
-
-The strongest gaps concern strategic selection, external value, sustained
-organizational reliability and changing human dependencies. Many public
-results concern bounded tasks, coding systems or simulations. They cannot
-establish that a team will remain useful and self-sustaining over months.
-
-Before adopting this structure, compare it with a task catalog and an
-occasion catalog using the same content. Test ordinary requests, ambiguous
-requests and cases where no skill should load. Measure discovery separately
-from the effect of the selected guidance, and compare behavior against no
-guidance under recorded model and harness conditions.
-
-Two useful probes are **evaluating a context or skill change** and
-**reconciling active work after a change of direction**. They test different
-parts of the proposed structure and are candidates, not settled skill
-boundaries. A correct file format or a convincing walkthrough does not
-establish that either improves an agent's decisions.
+Use context optimization and reconciliation after changed direction as
+possible early probes. They can test whether the product equips a team to
+act, whether evidence reaches the decision and whether the organization of
+the knowledge supports several useful routes. They remain candidate probes;
+the outline is not an accepted taxonomy or a validated set of skills.

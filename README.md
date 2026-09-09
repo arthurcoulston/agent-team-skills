@@ -1,14 +1,19 @@
 # Agent team skills
 
-Skills and supporting knowledge for **agents that lead long-horizon agent
-teams** — selecting worthwhile work, bounding it, reviewing it independently,
-carrying context across sessions, and improving how the team operates.
+Skills and supporting knowledge for **agents leading teams in autonomous
+pursuit of open-ended directives over an indefinite operating life**. Build
+the capacity to sustain useful work, preserve direction, recover from failure
+and improve as conditions change.
+
+This collection follows the advancing frontier of an emerging field with
+humility, curiosity and ambition. Research on bounded tasks supplies valuable
+methods; applying them to continuing teams requires deliberate translation
+and testing. The product must turn that work into expertise leaders can act
+on, with clear evidence and conditions for its use.
 
 The collection is written to be loaded selectively by an agent and read
-directly by a human. Every recommendation carries its evidence, how settled
-it is, and the conditions under which it applies. A consuming team adopts it
-under its own authority: nothing here assumes our runtime, our ticket system,
-or our chain of command.
+directly by a human. A consuming team adopts it under its own authority,
+runtime and operating arrangements.
 
 ## Status
 
@@ -21,8 +26,9 @@ appear here, and for the licensing proposal.
 
 The repository name is a working name and may change before publication.
 
-[OUTLINE.md](OUTLINE.md) proposes the coverage map, candidate decisions and
-research gaps. Its structure and skill boundaries remain provisional.
+[OUTLINE.md](OUTLINE.md) proposes capabilities the product must enable.
+Multiple categories, tags and views over the same knowledge remain open;
+the outline does not settle the taxonomy or skill boundaries.
 
 ## Layout
 
