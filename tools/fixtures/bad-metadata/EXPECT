@@ -1,0 +1,3 @@
+id-filename-mismatch: frontmatter id is 'some-other-name' but the filename stem is 'mislabelled-entry'
+status-unknown: status 'probably-fine' is not one of
+field-missing: required field 'applicability' is missing or empty

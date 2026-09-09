@@ -1,0 +1,2 @@
+local-path: a macOS home path, readable only on the machine it was written on
+local-path: a home-relative path; a consuming team clones this repository and nothing else

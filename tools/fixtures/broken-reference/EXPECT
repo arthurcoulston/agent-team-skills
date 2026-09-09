@@ -1,0 +1,2 @@
+reference-unresolved: 'relations[0].to' points at 'knowledge:not-in-this-tree'
+reference-unresolved: 'sources[0].evidence' points at 'evidence:never-recorded'

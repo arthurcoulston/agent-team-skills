@@ -33,8 +33,17 @@ raised as a method question rather than attempted a third time.
 
 ## Checks
 
-Structural checks (format, metadata, reference resolution, identifier
-consistency) run from the repository and must pass. Behavioural cases run the
-guidance against a task with and without the skill loaded, and record the
-model and harness identity with the result. Both arrive with the scaffold;
-this section names the commands once they exist.
+Structural checks run from a clean checkout with nothing installed:
+
+    node tools/check.mjs              format, metadata, references, local paths
+    node tools/check-fixtures.mjs     proves those checks can go red
+
+The first must be green before a change is proposed. The second runs the
+checker against deliberately broken trees under `tools/fixtures/` and requires
+each to fail naming its own defect — so a new rule arrives with a fixture that
+shows it working, and a rule nobody has watched fail does not count as a rule.
+
+Behavioural cases run the guidance against a task with and without the skill
+loaded, and record the model and harness identity with the result. They arrive
+with the rest of the scaffold; this section names their command once it
+exists.

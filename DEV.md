@@ -25,16 +25,25 @@ path is broken for every reader but us.
 ## State
 
 Scaffold in progress under H-1165. Landed: the repository, its private
-remote, the boundary and contribution documents, and the skill/knowledge/
-evidence layout with one worked example of each ([LAYOUT.md](LAYOUT.md)).
-Not yet landed: the structural checks, the behavioural baseline runner, and
-the diagramming foundation. The diagram
+remote, the boundary and contribution documents, the skill/knowledge/
+evidence layout with one worked example of each ([LAYOUT.md](LAYOUT.md)), and
+the structural checks (`node tools/check.mjs`, proven red by
+`node tools/check-fixtures.mjs`). Not yet landed: the behavioural baseline
+runner and the diagramming foundation. The diagram
 framework is Arthur's choice — surveyed with evidence and recommended to him,
 never picked here (his direction, 2026-09-08); the same sitting established
 that he is personally involved in every visual element.
 
-Tooling leans Node, matching the rest of the estate, but the choice is made
-by the first real check rather than declared here.
+Tooling is Node with no dependencies and no package.json: a consuming team
+clones and runs, and `npm install` is not a step. The frontmatter parser in
+`tools/check.mjs` is deliberately small and handles only the shapes LAYOUT.md
+defines — a schema that outgrows it wants a real YAML dependency, not more
+cases bolted onto it.
+
+The boundary is enforced, not only written: the local-path scan lives in the
+committed checker, with its patterns in `tools/local-path-patterns.txt` so
+that stating a rule does not trip it. The fixtures are the only place a
+machine-local path is committed on purpose.
 
 The example content carries `status: exemplar` on purpose. It was written to
 fix the structure, and the research team reviews its claims like any other

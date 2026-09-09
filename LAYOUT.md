@@ -113,5 +113,11 @@ Two forms, for two readers.
 
 Where a relation and a prose link mean the same thing, both are present and
 they agree. The structural checks resolve the typed refs and flag a prose
-link into this repository that no relation records; that disagreement is
-usually a citation someone added to the text and forgot to record.
+link into this repository that no relation records in either direction; that
+disagreement is usually a citation someone added to the text and forgot to
+record.
+
+Everything on this page is enforced by `node tools/check.mjs`, which needs
+nothing installed. `node tools/check-fixtures.mjs` shows each of its rules
+failing on a tree broken for that purpose — see
+[tools/fixtures/README.md](tools/fixtures/README.md).

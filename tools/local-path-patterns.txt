@@ -1,0 +1,18 @@
+# Patterns for the local-path scan in check.mjs, one per line:
+#
+#     <JavaScript regular expression> :: why it must not be committed
+#
+# They live here as data rather than in the checker so that stating a rule
+# does not break it: check.mjs is itself scanned, this file is not.
+#
+# PUBLIC-BOUNDARY.md is the rule these enforce — installation must work from
+# repository-relative references, and no commit names a machine or a network
+# that only we can reach.
+
+/Users/[A-Za-z0-9._-]+ :: a macOS home path, readable only on the machine it was written on
+/home/[A-Za-z0-9._-]+ :: a Linux home path, readable only on the machine it was written on
+/Volumes/[A-Za-z0-9._-]+ :: a mounted-volume path, local to one machine
+(?<![\w~])~/[A-Za-z0-9._-]+ :: a home-relative path; a consuming team clones this repository and nothing else
+file://[^\s)]+ :: a file:// URL points at one reader's own disk
+https?://localhost(:[0-9]+)? :: an internal address nobody outside our network can reach
+https?://127\.0\.0\.1(:[0-9]+)? :: an internal address nobody outside our network can reach

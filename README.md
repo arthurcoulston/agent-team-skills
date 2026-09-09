@@ -27,9 +27,10 @@ The repository name is a working name and may change before publication.
 entrypoints in the open [Agent Skills](https://code.claude.com/docs/en/skills)
 format under `skills/`; supporting knowledge entries with stable identifiers,
 typed relationships and source/review metadata under `knowledge/`; and the
-preserved readings and runs they rest on under `evidence/`. Still arriving:
-runnable structural and behavioural checks, and generated human-readable views
-over the same identifiers the agents use.
+preserved readings and runs they rest on under `evidence/`. `node
+tools/check.mjs` checks a tree against those conventions, with nothing to
+install. Still arriving: behavioural checks, and generated human-readable
+views over the same identifiers the agents use.
 
 ## Contributing
 
