@@ -21,6 +21,9 @@ appear here, and for the licensing proposal.
 
 The repository name is a working name and may change before publication.
 
+[OUTLINE.md](OUTLINE.md) proposes the coverage map, candidate decisions and
+research gaps. Its structure and skill boundaries remain provisional.
+
 ## Layout
 
 [LAYOUT.md](LAYOUT.md) states the conventions in full. In short: skill
