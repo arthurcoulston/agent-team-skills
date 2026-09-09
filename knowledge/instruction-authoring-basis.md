@@ -61,12 +61,17 @@ sources:
     source_date: 2026-08-21
     evidence_date: 2026-09-09
     evidence: evidence:structural-conditioning-authoring-2026-09-09
+  - title: First instruction-authoring subagent pilot
+    source_date: 2026-09-09
+    evidence_date: 2026-09-09
+    evidence: evidence:instruction-authoring-pilot-2026-09-09
 review:
   last_checked: 2026-09-09
   checked_by: mason
 uncertainty: >
-  Research-informed synthesis, not an independently reviewed or behaviorally
-  validated authoring method. Studies test different artifacts and bounded
+  Research-informed synthesis. A small pilot with independent subagent review
+  found no downstream advantage; broader efficacy is unvalidated. Studies test
+  different artifacts and bounded
   tasks. Provider pages are mutable and model-specific; their source dates
   are unknown because the passages have no verified publication date.
 applicability: >
@@ -140,3 +145,12 @@ continue obsolete behavior. Use finite trials and report their duration.
 The draft [authoring skill](../skills/writing-agent-instructions/SKILL.md)
 implements these judgments. Its authorship using the same method is not
 independent evidence that the method works.
+
+## First direct test
+
+The [subagent pilot](../evidence/instruction-authoring-pilot-2026-09-09.md)
+compared eight author drafts and sixteen recipient snapshots. Both
+conditions preserved requirements and passed the supplied tasks. The skill
+changed output length and detail, but did not demonstrate better downstream
+performance. The result is a limited development observation, not acceptance
+of the method. Harder authoring work remains to test.

@@ -15,7 +15,9 @@ rubric: >
 An author-stage case for the
 [instruction-authoring skill](../skills/writing-agent-instructions/SKILL.md).
 Use the [evaluation protocol](../knowledge/evaluating-instruction-authoring.md)
-for fresh-recipient trials. This case has not been run.
+for fresh-recipient trials. The [first pilot](../evidence/instruction-authoring-pilot-2026-09-09.md)
+ran this case with two authors per condition and fresh recipients; both
+conditions passed the supplied snapshots.
 
 ## Task
 

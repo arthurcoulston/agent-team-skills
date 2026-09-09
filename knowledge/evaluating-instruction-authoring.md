@@ -22,13 +22,18 @@ sources:
     source_date: 2026-08-06
     evidence_date: 2026-09-09
     evidence: evidence:playbook-transfer-authoring-2026-09-09
+  - title: First instruction-authoring subagent pilot
+    source_date: 2026-09-09
+    evidence_date: 2026-09-09
+    evidence: evidence:instruction-authoring-pilot-2026-09-09
 review:
   last_checked: 2026-09-09
   checked_by: mason
 uncertainty: >
-  Proposed evaluation protocol, not an executed experiment. Execution feedback
-  and target-side transfer tests motivate it; the full two-stage design is
-  our synthesis. No improvement or compatibility claim is established yet.
+  Proposed protocol, exercised in one small development pilot. Both conditions
+  passed; no downstream improvement or broad compatibility claim is established.
+  Execution feedback and target-side transfer tests motivate the design, which
+  remains our synthesis.
 applicability: >
   Evaluating a reusable instruction-authoring method and material revisions
   to persistent instructions. Scale repetitions, task coverage and independent
@@ -111,5 +116,8 @@ cases; genuinely held-out cases must be prepared separately from the author.
 The current runner in [LAYOUT.md](../LAYOUT.md) invokes the author with and
 without the skill. It does not execute a fresh recipient, guarantee reference
 loading, or score the output. These cases therefore prepare the first stage;
-the full protocol still needs recipient execution and independent review.
-No behavioral runs have been performed for this draft.
+native subagent orchestration was used for recipient execution and blinded
+review in the [first pilot](../evidence/instruction-authoring-pilot-2026-09-09.md).
+That small test showed no downstream advantage. It did not test natural
+loading, broader transfer or continuing operation; the standard CLI runner
+still lacks the second stage.

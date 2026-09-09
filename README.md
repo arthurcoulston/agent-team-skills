@@ -56,5 +56,7 @@ the first substantive skill under development: writing standing guidance,
 skills, task briefs and handoffs that other agents consume. Its
 [research basis](knowledge/instruction-authoring-basis.md) and
 [evaluation protocol](knowledge/evaluating-instruction-authoring.md) separate
-the evidence from the proposed method. It is a draft; downstream behavioral
-trials and independent review remain outstanding.
+the evidence from the proposed method. A
+[first subagent pilot](evidence/instruction-authoring-pilot-2026-09-09.md)
+changed authored text but showed no downstream advantage on its two tasks.
+The skill remains draft, with broader validation outstanding.

@@ -90,5 +90,7 @@ tool limits and contradictory context require different repairs. Version
 reusable instructions and retain a way to restore a working version.
 Recheck affected behavior when the model, runtime, task or source changes.
 
-**Draft:** this method has a [research basis](../../knowledge/instruction-authoring-basis.md),
-but has not yet passed independent review or downstream behavioral trials.
+**Draft:** this method has a [research basis](../../knowledge/instruction-authoring-basis.md).
+A [small subagent pilot](../../evidence/instruction-authoring-pilot-2026-09-09.md)
+changed authored text but showed no downstream advantage. Broader validation
+remains outstanding.
