@@ -12,8 +12,9 @@ or our chain of command.
 
 ## Status
 
-**Pre-v0.1, private.** The scaffold is being built; there is no content to
-install yet and no compatibility is claimed. This repository is intended for
+**Pre-v0.1, private.** The scaffold is being built; there is no collection to
+install yet and no compatibility is claimed. One worked example of each kind
+of file is in the tree to show the shape — see [LAYOUT.md](LAYOUT.md). This repository is intended for
 publication once a v0.1 collection exists and has been reviewed — see
 [PUBLIC-BOUNDARY.md](PUBLIC-BOUNDARY.md) for what is and is not intended to
 appear here, and for the licensing proposal.
@@ -22,11 +23,13 @@ The repository name is a working name and may change before publication.
 
 ## Layout
 
-Arriving with the scaffold, in order: skill entrypoints in the open
-[Agent Skills](https://code.claude.com/docs/en/skills) format; supporting
-knowledge entries with stable identifiers, typed relationships and
-source/review metadata; runnable structural and behavioural checks; and
-generated human-readable views over the same identifiers the agents use.
+[LAYOUT.md](LAYOUT.md) states the conventions in full. In short: skill
+entrypoints in the open [Agent Skills](https://code.claude.com/docs/en/skills)
+format under `skills/`; supporting knowledge entries with stable identifiers,
+typed relationships and source/review metadata under `knowledge/`; and the
+preserved readings and runs they rest on under `evidence/`. Still arriving:
+runnable structural and behavioural checks, and generated human-readable views
+over the same identifiers the agents use.
 
 ## Contributing
 

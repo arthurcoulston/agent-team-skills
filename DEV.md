@@ -25,15 +25,21 @@ path is broken for every reader but us.
 ## State
 
 Scaffold in progress under H-1165. Landed: the repository, its private
-remote, and the boundary and contribution documents. Not yet landed: the
-skill and reference layout with a worked example, the structural checks, the
-behavioural baseline runner, and the diagramming foundation. The diagram
+remote, the boundary and contribution documents, and the skill/knowledge/
+evidence layout with one worked example of each ([LAYOUT.md](LAYOUT.md)).
+Not yet landed: the structural checks, the behavioural baseline runner, and
+the diagramming foundation. The diagram
 framework is Arthur's choice — surveyed with evidence and recommended to him,
 never picked here (his direction, 2026-09-08); the same sitting established
 that he is personally involved in every visual element.
 
 Tooling leans Node, matching the rest of the estate, but the choice is made
 by the first real check rather than declared here.
+
+The example content carries `status: exemplar` on purpose. It was written to
+fix the structure, and the research team reviews its claims like any other
+entry — a session should not treat it as ratified guidance, or quietly build
+more content in its image without that review.
 
 ## Remote
 
