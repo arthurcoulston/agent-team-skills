@@ -1,7 +1,12 @@
 # Contributing
 
-A contribution here is a claim that some guidance will make an agent team
-work better. What it has to carry is the basis for that claim.
+You are writing instructions and context for another agent to consume.
+Make its responsibilities, decisions and relevant expertise explicit, and
+preserve the distinction between instructions and supporting evidence.
+
+A contribution must explain how it helps an agent team work better. Value
+can include preserving task quality while reducing retained context and
+leaving headroom for future work. Supply evidence for the claimed benefit.
 
 ## What a change must include
 
@@ -21,8 +26,10 @@ work better. What it has to carry is the basis for that claim.
 
 Confident wording without support. A recipe taken from a paper and presented
 as tested when its transfer here has not been. Popularity or a single
-successful implementation generalised into a rule. Guidance that reads well
-and changes no behaviour.
+successful implementation generalised into a rule. Claims of benefit based
+only on attractive prose. A smaller context footprint with preserved
+required behavior is a legitimate benefit; state what was measured and
+which cases established preservation.
 
 ## Review
 

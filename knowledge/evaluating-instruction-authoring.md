@@ -76,14 +76,30 @@ Do not mix those two claims.
 | Fidelity | Necessary intent, constraints and exceptions survive; no invented obligations or grants of authority. |
 | Task outcome | Correct, useful work under ordinary and relevant exceptional inputs. |
 | Restraint | Unchanged inputs, already-completed work and inapplicable conditions do not elicit needless actions. |
-| Cost | Instruction tokens, retrieved context, output, tool calls, retries and elapsed time where measurable. |
+| Context headroom | Retained tokens and remaining capacity in the actual loaded set, including any resident authoring guidance. |
+| Cost | Authoring overhead separately from recipient context, output, tool calls, retries and elapsed time where measurable. |
 | Transfer | Performance on withheld inputs and declared recipient configurations. |
 
 Treat hard requirements as acceptance conditions, not as defects that token
 savings can average away. Decide in advance how much ordinary quality
 variation is acceptable when assessing efficiency. Do not invent a universal
-threshold. If the candidate merely becomes shorter, report that observation
-without claiming it works better.
+threshold. When required behavior and useful task quality are preserved,
+reduced retained context is a legitimate measured benefit. Report the tokens
+saved and the cases supporting preservation; do not infer reliability on
+unseen work from size alone. Measure remaining space against the actual
+operating budget, without inventing a universal reserve percentage.
+
+To test the value of headroom for later work, add the same necessary
+instructions or task context under a fixed budget and check retained and
+new responsibilities together. Keep this capacity result distinct from
+cumulative token spend. Charge the authoring skill where it is loaded; an
+occasional authoring cost and permanently retained recipient text differ.
+
+When evaluating the audience cue itself, compare an ordinary writing
+request, that request with an explicit agent-reader cue, the cue plus a
+brief headroom requirement, and the full skill. Keep source material and
+rubrics fixed. The first pilot gave both conditions the agent-reader cue,
+so it cannot establish that cue's effect or a universal frontier-model trait.
 
 Use deterministic checks for objectively inspectable state and independent
 judgment for semantic quality. Neither textual similarity nor the presence

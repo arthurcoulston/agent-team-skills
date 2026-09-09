@@ -11,9 +11,12 @@ methods; applying them to continuing teams requires deliberate translation
 and testing. The product must turn that work into expertise leaders can act
 on, with clear evidence and conditions for its use.
 
-The collection is written to be loaded selectively by an agent and read
-directly by a human. A consuming team adopts it under its own authority,
-runtime and operating arrangements.
+You are writing instructions and context for another agent to consume.
+That is the authoring contract for every part of this collection, including
+supporting knowledge and evidence. Make the agent's responsibilities,
+decisions and basis for action clear. Keep evidence identifiable as evidence.
+Human readers inspect and improve the same material. A consuming team adopts
+it selectively under its own authority, runtime and operating arrangements.
 
 ## Status
 

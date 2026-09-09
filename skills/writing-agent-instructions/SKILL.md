@@ -7,9 +7,9 @@ metadata:
 
 # Write effective agent instructions
 
-Give the recipient enough direction and expertise to act correctly, with
-the least unnecessary context and procedural burden. Preserve the author's
-intent and the recipient's authorized scope.
+You are writing instructions for another agent. Give it the direction and
+expertise needed to act correctly, while preserving intent, authorized
+scope and room in its context for future work.
 
 ## Establish what must transfer
 
@@ -57,12 +57,13 @@ generalize and which are incidental. Choose a readable structure that makes
 scope clear; use exact schemas or delimiters where the consumer needs them.
 Verify required paths, commands and interfaces instead of inventing them.
 
-## Remove padding without deleting meaning
+## Preserve context headroom
 
-Delete repeated intent, ceremonial introductions, generic advice the
-recipient already knows, and procedures unrelated to the assignment.
-Replace vague emphasis with an observable responsibility. Combine
-overlapping rules and remove obsolete instructions at their source.
+Remove padding before accumulated instructions reach context caps. Delete
+repeated intent, ceremonial introductions, already-known generic advice and
+unnecessary procedures. Combine overlapping rules and retire obsolete ones.
+When an operating budget is known, measure the space left in the actual
+loaded context; leave room for future task context and necessary instructions.
 
 For each substantial deletion, check which requirement or useful decision
 could be lost. Preserve exceptions, prerequisites, authority boundaries and
@@ -80,8 +81,9 @@ For those trials, give a fresh recipient the candidate in its intended
 context and inspect its work. Compare with the existing instructions or a
 minimal faithful baseline. Include relevant exceptions and cases withheld
 from drafting. Measure task quality, required behavior, unnecessary work
-and total cost; instruction length is only one cost. Preserve failed runs
-and report tests not performed. Use the
+and retained context size. Equally effective instructions that preserve
+headroom are a useful result. Count this authoring guidance too wherever it
+remains loaded. Preserve failed runs and report tests not performed. Use the
 [evaluation method](../../knowledge/evaluating-instruction-authoring.md)
 when preparing a reusable skill for acceptance.
 
@@ -92,5 +94,5 @@ Recheck affected behavior when the model, runtime, task or source changes.
 
 **Draft:** this method has a [research basis](../../knowledge/instruction-authoring-basis.md).
 A [small subagent pilot](../../evidence/instruction-authoring-pilot-2026-09-09.md)
-changed authored text but showed no downstream advantage. Broader validation
-remains outstanding.
+showed no task-performance advantage and mixed context-size effects. This
+subsequent audience/headroom refinement remains untested.

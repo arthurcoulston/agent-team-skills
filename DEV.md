@@ -3,8 +3,8 @@ cap_tokens: 1200
 ---
 # DEV — agent-team-skills
 
-The public product of R-14: skills and supporting knowledge for leading
-long-horizon agent teams. The plan, directive and research live in Crew at
+You are writing instructions and context for other agents. This is R-14's
+public collection of skills and supporting knowledge for leading agent teams. The plan, directive and research live in Crew at
 the Crew estate under its R-14 project directory; the work is tracked under project
 `R-14`. **Nothing from those two places is copied here** — the boundary is
 [PUBLIC-BOUNDARY.md](PUBLIC-BOUNDARY.md), and it is held from the first

@@ -83,8 +83,9 @@ applicability: >
 # Ground instruction authoring in behavior and evidence
 
 Optimize the work produced under the instructions while preserving their
-legitimate requirements. Concision reduces burden when useful meaning
-survives. It is an editing criterion, not proof of effectiveness.
+legitimate requirements. Concision can also preserve context headroom for
+future work. Count that capacity as a benefit when behavior and useful
+meaning survive; size alone does not establish preservation.
 
 ## Evidence that changes the authoring method
 
@@ -152,5 +153,9 @@ The [subagent pilot](../evidence/instruction-authoring-pilot-2026-09-09.md)
 compared eight author drafts and sixteen recipient snapshots. Both
 conditions preserved requirements and passed the supplied tasks. The skill
 changed output length and detail, but did not demonstrate better downstream
-performance. The result is a limited development observation, not acceptance
-of the method. Harder authoring work remains to test.
+performance. Shorter handoffs preserved behavior on the supplied cases,
+which is a limited context-efficiency result; the revision task became
+longer. The pilot did not score the value of capacity for later context, and
+both conditions explicitly identified the recipient as an agent. Isolating
+that cue and testing retained headroom remain open. These observations do
+not establish the full method's general effectiveness.
