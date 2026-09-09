@@ -173,9 +173,12 @@ export function collectEntries(root) {
 const asList = (value) => (Array.isArray(value) ? value : []);
 
 // Every place a typed ref can appear in frontmatter, with the field path a
-// finding names it by and the label a generated view draws the edge with.
-// This list is the single answer to "what refers to what": adding a kind of
-// reference here reaches the checker and the views in one edit.
+// finding names it by, the label a generated view draws the edge with, and —
+// where the field names one kind of record and nothing else — the kind it has
+// to resolve to. This list is the single answer to "what refers to what":
+// adding a kind of reference here reaches the checker and the views in one
+// edit, and the expectation stays beside the field rather than inside
+// whichever check happens to read it.
 export function typedRefs(data) {
   const out = [];
   if (!data) return out;
@@ -183,10 +186,11 @@ export function typedRefs(data) {
     if (rel?.to !== undefined) out.push({ field: `relations[${i}].to`, ref: rel.to, label: String(rel.type ?? 'relates') });
   }
   for (const [i, source] of asList(data.sources).entries()) {
-    if (source?.evidence !== undefined) out.push({ field: `sources[${i}].evidence`, ref: source.evidence, label: 'sources' });
+    if (source?.evidence !== undefined) out.push({ field: `sources[${i}].evidence`, ref: source.evidence, label: 'sources', expect: 'evidence' });
   }
+  // These two are named for the kind they hold, and hold nothing else.
   for (const field of ['skill', 'case']) {
-    if (data[field] !== undefined) out.push({ field, ref: data[field], label: field });
+    if (data[field] !== undefined) out.push({ field, ref: data[field], label: field, expect: field });
   }
   for (const [i, ref] of asList(data.view?.include).entries()) {
     out.push({ field: `view.include[${i}]`, ref, label: 'includes' });

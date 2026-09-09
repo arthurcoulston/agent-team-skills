@@ -56,13 +56,21 @@ const isDate = (entry, field, value) => {
   return true;
 };
 
-function resolveRef(entry, field, ref) {
+function resolveRef(entry, field, ref, expect) {
   const m = TYPED_REF.exec(String(ref));
   if (!m) {
     report(entry.rel, 'reference-malformed', `'${field}' is '${ref}', not <${Object.keys(KIND_PATH).join('|')}>:<id>`);
     return null;
   }
   const [, kind, id] = m;
+  // A ref that resolves is not thereby the right ref. Where a field names one
+  // kind of record, whatever reads it assumes that kind — the source-date
+  // cross-check below opens the evidence file directly — so a mis-kinded ref
+  // that happens to resolve is a finding here rather than a crash there.
+  if (expect && kind !== expect) {
+    report(entry.rel, 'reference-kind-mismatch', `'${field}' points at '${ref}', and this field takes ${expect}:<id>`);
+    return null;
+  }
   const target = KIND_PATH[kind](id);
   if (!existsSync(join(root, target))) {
     report(entry.rel, 'reference-unresolved', `'${field}' points at '${ref}', and ${target} does not exist`);
@@ -78,8 +86,8 @@ function resolveRef(entry, field, ref) {
 // collection.mjs.
 function resolveAll(entry, refs) {
   const byField = new Map();
-  for (const { field, ref } of typedRefs(entry.data)) {
-    const token = resolveRef(entry, field, ref);
+  for (const { field, ref, expect } of typedRefs(entry.data)) {
+    const token = resolveRef(entry, field, ref, expect);
     if (!token) continue;
     refs.add(token);
     byField.set(field, token);

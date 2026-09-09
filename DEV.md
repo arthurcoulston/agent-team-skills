@@ -68,7 +68,8 @@ generated index is the navigation, and a session that "fixes" this with
 `click` ships links that silently do nothing where most people read it.
 
 `tools/collection.mjs` holds the layout's vocabulary, including the one list
-of every place a typed ref can appear. Single on purpose: with a copy each,
+of every place a typed ref can appear and the kind each of those fields
+requires. Single on purpose: with a copy each,
 the checker could validate a new kind of reference the generator still
 omitted from every map — a map lying by omission, which nothing would catch.
 

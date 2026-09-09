@@ -15,6 +15,10 @@ what the records produce. `view-without-selection/` never says where to start
 walking, and `view-not-generated/` carries a hand-drawn diagram with no
 generated marker at all.
 
+`mis-kinded-reference/` is the one that has to ship something *valid*: its
+skill is a real skill, so that the citation naming it resolves to a file and
+is caught for being the wrong kind of file rather than for being missing.
+
 The paths in `local-path/` are fictional and deliberate. They are the one
 place in this repository where a machine-local path is committed, because the
 scan that forbids them everywhere else has to be shown catching one.
