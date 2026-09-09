@@ -8,6 +8,26 @@ A contribution must explain how it helps an agent team work better. Value
 can include preserving task quality while reducing retained context and
 leaving headroom for future work. Supply evidence for the claimed benefit.
 
+## Develop the research before the instructions
+
+Keep exploratory source notes, comparisons, unresolved questions and private
+review discussions in a separate research workspace. They can remain
+exploratory while the evidence is being understood. Use the
+[writing method](skills/writing-agent-instructions/SKILL.md) when turning
+that research into a candidate for this collection.
+
+Prepare the contribution and its necessary supporting evidence so a reader
+can use and inspect them without access to that workspace. Do not bulk-copy
+working files or add private workspace links. A public-safe candidate may
+enter this repository as explicitly draft; its presence is not acceptance.
+Keep one authoritative candidate and review its exact revision.
+
+Initial authoring uses outside evidence and independent editorial review.
+Product-effectiveness experiments are a separately commissioned phase.
+Distinguish a technique's reported effectiveness from the untested effect of
+our resulting instructions. Preserve earlier experiments and their limits;
+source review and structural checks do not establish product effectiveness.
+
 ## What a change must include
 
 - **The guidance itself**, scoped to a decision or a task an agent actually

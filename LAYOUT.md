@@ -13,6 +13,15 @@ One worked example of each is in the tree already. They exist to show the
 shape: their claims are exemplars, not ratified guidance, and they say so in
 their own metadata.
 
+## Research before product form
+
+This layout describes the distributable collection. Keep working research
+and private review records outside it. Bring in deliberately prepared
+skills, supporting knowledge and evidence that stand alone for the consumer;
+retained evidence is not a dump of the research workspace. Draft status
+allows a public-safe candidate to be reviewed here before acceptance.
+See [Contributing](CONTRIBUTING.md) for the research-to-product handoff.
+
 ## The installation unit is the whole repository
 
 A consuming team clones the repository and points its agent at `skills/`.

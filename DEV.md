@@ -22,6 +22,13 @@ Second: installation must work from relative references. A consuming team
 clones this repo and nothing else; anything that reaches for an absolute Crew
 path is broken for every reader but us.
 
+## Authoring phase
+
+Shared research precedes product drafts; [Contributing](CONTRIBUTING.md)
+defines that handoff. Initial acceptance uses outside evidence and editorial
+review. New effectiveness experiments await separate commission; retain
+existing evidence and report unperformed tests honestly.
+
 ## State
 
 Scaffold in progress under H-1165. Landed: the repository, its private
