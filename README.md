@@ -183,3 +183,14 @@ preserves contrary findings about memory interventions and transfers the method
 to three sample missions; the [generated view](views/building-reliability-evidence.md)
 shows that basis. It is draft, independently unreviewed and untested for product
 effectiveness.
+
+[Sustaining and recovering operations](skills/sustaining-and-recovering-operations/SKILL.md)
+distinguishes useful activity, intentional waiting, blockage and failure;
+preserves enough operation identity and verified state to avoid unsafe replay;
+bounds retries; and restores a declared minimum useful capability. Its
+[supporting synthesis](knowledge/sustaining-and-restoring-useful-operation.md)
+transfers service, distributed-systems, job-controller and contingency-planning
+methods with their limits visible, and the [generated
+view](views/sustaining-and-recovering-operations.md) connects that basis to three
+sample missions. The combined method is reasoned transfer: it is draft,
+independently unreviewed and untested for product effectiveness.
