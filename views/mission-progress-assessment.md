@@ -23,6 +23,8 @@ flowchart LR
   mission_community_decision_watch(["Help a community shape decisions affecting its future"])
   mission_public_evidence_ledger(["Keep a contested public evidence resource trustworthy"])
   mission_reproducible_practice(["Advance reproducible knowledge in an emerging practice"])
+  founder_first_run[["Sparse founder first-run context"]]
+  founder_PROFILE[["Sparse founder profile"]]
   knowledge_assessing_progress_under_a_continuing_mission["How to assess progress under a continuing mission"]
   knowledge_choosing_an_accessible_work_increment["Worked transfer — choose the next accessible-work increment"]
   knowledge_choosing_work_under_a_directive["What is known about an agent choosing its own next work"]
@@ -34,6 +36,9 @@ flowchart LR
   evidence_mission_assessment_oecd_criteria_2026_09_10[("Applying Evaluation Criteria Thoughtfully")]
   evidence_mission_assessment_venture_experimentation_2026_09_10[("Financing Entrepreneurial Experimentation")]
 
+  founder_first_run -->|applies_to| mission_accessible_work_tools
+  founder_first_run -->|depends_on| founder_PROFILE
+  founder_first_run -->|depends_on| knowledge_assessing_progress_under_a_continuing_mission
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_accessible_work_tools
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_adaptive_ambition_support
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_community_decision_watch
@@ -66,6 +71,11 @@ flowchart LR
 - [Help a community shape decisions affecting its future](../missions/community-decision-watch.md), `mission:community-decision-watch`
 - [Keep a contested public evidence resource trustworthy](../missions/public-evidence-ledger.md), `mission:public-evidence-ledger`
 - [Advance reproducible knowledge in an emerging practice](../missions/reproducible-practice.md), `mission:reproducible-practice`
+
+### Founder context
+
+- [Sparse founder first-run context](../founder/first-run.md), `founder:first-run`
+- [Sparse founder profile](../founder/PROFILE.md), `founder:PROFILE`
 
 ### Knowledge
 

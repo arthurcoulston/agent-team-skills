@@ -60,6 +60,11 @@ collection intended to stay loaded. It points back to the selectively loaded
 skills rather than summarising them, and records why each promotion earned its
 recurring context cost.
 
+[The first-run context specification](founder/first-run.md) separates what is
+loaded, what stays discoverable and what the consuming environment must supply.
+It includes a measured worked startup package and a prospective comparison
+design; neither has been tested for effectiveness.
+
 ## Sample missions
 
 [The sample missions](missions/) are continuing directives for reasoning about
