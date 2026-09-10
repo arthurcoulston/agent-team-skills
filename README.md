@@ -68,6 +68,13 @@ bounds without prescribing a product, route, team or terminal checklist. They
 have not been run; their Band B difficulty is a dated estimate made on
 2026-09-10, not a measured threshold.
 
+[Assessing progress under a continuing mission](knowledge/assessing-progress-under-a-continuing-mission.md)
+treats a period report as an index into artifacts, observations and dated
+decisions, not as evidence by itself. Its [generated
+view](views/mission-progress-assessment.md) connects the lens to all five
+missions and to a worked transfer for choosing an accessible-work increment.
+The lens is prospective and has been used zero times.
+
 ## Foundational work in progress
 
 [Writing agent instructions](skills/writing-agent-instructions/SKILL.md) is
