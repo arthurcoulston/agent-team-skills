@@ -9,11 +9,23 @@ say about it.
 red, naming its own defect). A check nobody has watched fail is not known to
 check anything: these are how that is demonstrated rather than asserted.
 
-Three of them are about views. `stale-view/` holds a diagram generated
+Five of them are about views. `stale-view/` holds a diagram generated
 before its collection gained an evidence record: internally valid, no longer
 what the records produce. `view-without-selection/` never says where to start
 walking, and `view-not-generated/` carries a hand-drawn diagram with no
 generated marker at all.
+
+The last two are a pair about the edge filter, and they are the reason a
+filter can no longer fail in silence. `view-follow-not-a-list/` writes one
+label without writing a list, which nothing that reads the filter can see as
+one: its committed diagram draws three entries because every edge was walked,
+and the finding names the filter rather than the map.
+`view-follow-written-inline/` writes the filter the way LAYOUT.md shows —
+inline, with a trailing comment — and misspells one of its two labels. Its
+`EXPECT` names the offending label *by position*, which is only reachable if
+the inline form was read as a list, and its diagram draws two entries because
+the filter was applied. Read as a scalar, both trees would report the same
+finding and neither would say which.
 
 `mis-kinded-reference/` is the one that has to ship something *valid*: its
 skill is a real skill, so that the citation naming it resolves to a file and

@@ -238,6 +238,13 @@ function checkView(entry, refs, entries) {
   if (!Array.isArray(definition.include) || definition.include.length === 0) {
     report(entry.rel, 'view-selection-missing', "'view.include' names no entry to start from, so the view selects nothing");
   }
+  // An edge filter that is not a list is not a filter. Everything that reads
+  // it asks whether it is an array, so a scalar disappears and the view walks
+  // every edge with nothing going red — and a map that quietly includes what
+  // its author excluded is worse than one that is obviously wrong.
+  if (definition.follow !== undefined && !Array.isArray(definition.follow)) {
+    report(entry.rel, 'view-follow-malformed', `'view.follow' is '${definition.follow}', not a list of edge labels; a filter that is not a list is ignored, and the view walks every edge instead`);
+  }
   for (const [i, label] of (Array.isArray(definition.follow) ? definition.follow : []).entries()) {
     if (!EDGE_LABELS.includes(String(label))) {
       report(entry.rel, 'view-follow-unknown', `view.follow[${i}] is '${label}', not one of ${EDGE_LABELS.join(', ')}`);

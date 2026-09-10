@@ -1,0 +1,4 @@
+# The index in this line is the point: view.follow[1] can only be named if the
+# inline flow sequence was read as a list. Parsed as a scalar it would be
+# reported as view-follow-malformed and this line would never appear.
+view-follow-unknown: view.follow[1] is 'sorces'

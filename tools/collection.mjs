@@ -32,8 +32,10 @@ export const SKIPPED = ['.git', 'node_modules', join('tools', 'fixtures')];
 // ---------------------------------------------------------------- YAML
 
 // Enough YAML for the frontmatter LAYOUT.md defines: scalars, nested maps,
-// lists of maps, and folded/literal block scalars. Not a general parser — it
-// is deliberately small so it has no dependency and no surprises.
+// lists of maps, inline flow sequences, and folded/literal block scalars. Not
+// a general parser — it is deliberately small so it has no dependency and no
+// surprises. Where it cannot read a value it leaves it whole as a scalar
+// rather than half-reading it, so the checker can name it.
 export function parseYaml(text) {
   const [value] = parseNode(text.split('\n'), 0, 0);
   return value ?? {};
@@ -78,7 +80,7 @@ function parseMap(lines, i, indent) {
       out[key] = value;
       i = next;
     } else {
-      out[key] = scalar(rest);
+      out[key] = flowSequence(rest) ?? scalar(rest);
     }
   }
   return [out, i];
@@ -106,6 +108,35 @@ function parseList(lines, i, indent) {
     }
   }
   return [out, i];
+}
+
+// An inline flow sequence — `[applies_to, sources]`, the form LAYOUT.md
+// documents for a view's edge filter. Returns null for anything that is not
+// one, so a plain scalar reads exactly as it did before. Splitting respects
+// quotes and nesting, and an unclosed bracket reads as null rather than as a
+// guess: a value this parser cannot read has to arrive whole at the checker,
+// because a list silently read as a string is a filter that does nothing.
+function flowSequence(raw) {
+  const s = raw.trim();
+  if (s[0] !== '[') return null;
+  const items = [];
+  let item = '';
+  let depth = 0;
+  let quote = null;
+  for (const ch of s) {
+    if (quote) { item += ch; if (ch === quote) quote = null; continue; }
+    if (ch === '"' || ch === "'") { quote = ch; item += ch; continue; }
+    if (ch === '[' || ch === '{') { depth++; if (depth === 1) continue; }
+    if (ch === ']' || ch === '}') {
+      depth--;
+      // The closing bracket ends the value; a trailing comment after it is
+      // outside the sequence, which is how LAYOUT.md writes the example.
+      if (depth === 0) { if (item.trim() !== '') items.push(scalar(item)); return items; }
+    }
+    if (ch === ',' && depth === 1) { items.push(scalar(item)); item = ''; continue; }
+    item += ch;
+  }
+  return null;
 }
 
 function scalar(raw) {

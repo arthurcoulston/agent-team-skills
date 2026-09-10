@@ -47,9 +47,22 @@ calibrated design; real lenses get designed with him in the room.
 
 Tooling is Node with no dependencies and no package.json: a consuming team
 clones and runs, and `npm install` is not a step. The frontmatter parser in
-`tools/check.mjs` is deliberately small and handles only the shapes LAYOUT.md
-defines — a schema that outgrows it wants a real YAML dependency, not more
-cases bolted onto it.
+`tools/collection.mjs` is deliberately small and handles only the shapes
+LAYOUT.md defines — a schema that outgrows it wants a real YAML dependency,
+not more cases bolted onto it.
+
+Small is not the same as silent, and the difference cost a view its filter.
+`follow: [applies_to, sources]` is the form LAYOUT.md documents; the parser
+read block lists only, so the value arrived as a string, everything that
+reads it asked whether it was a list and got no, and the view quietly walked
+every edge while every check stayed green (H-1222). Two things hold that
+shut. Where the parser cannot read a value it leaves it whole as a scalar
+instead of guessing, so a wrong type reaches a check rather than vanishing.
+And a field whose type matters gets a check that reddens on the wrong type:
+`view-follow-malformed` is that check, and the fixture beside it,
+`tools/fixtures/view-follow-written-inline/`, names its bad label by position
+in the list — so it goes red if the parser ever stops reading the form the
+documentation shows.
 
 The boundary is enforced, not only written: the local-path scan lives in the
 committed checker, with its patterns in `tools/local-path-patterns.txt` so
