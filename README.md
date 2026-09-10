@@ -155,8 +155,8 @@ hypotheses, bounds, observable outcomes, assumptions, decision-led review and
 propagation when direction changes. Its [supporting
 basis](knowledge/establishing-operating-direction.md) transfers evaluation,
 performance-review and change-control methods with their limits intact and
-works them through two sample missions. It is draft, independently unreviewed
-and untested for product effectiveness.
+works them through two sample missions. It is draft, independently reviewed and
+accepted, and untested for product effectiveness.
 
 [Designing roles and decision rights](skills/designing-roles-and-decision-rights/SKILL.md)
 chooses between one owner, a tool or workflow, temporary assistance and a
@@ -164,7 +164,7 @@ persistent role, then defines responsibility, authority, interfaces and
 reorganization triggers. Its [supporting basis](knowledge/shaping-roles-and-decision-rights.md)
 separates bounded execution-mode evidence from reasoned guidance about persistent
 roles and works the distinction through three sample missions. It is draft,
-independently unreviewed and untested for product effectiveness.
+independently reviewed and accepted, and untested for product effectiveness.
 
 [Designing context and retrieval](skills/designing-context-and-retrieval/SKILL.md)
 places a continuing role's information across always-loaded context, selective
@@ -172,7 +172,7 @@ guidance, live state and durable evidence, then tests discovery, retrieval,
 conflict handling and use. Its [supporting synthesis](knowledge/placing-and-renewing-agent-context.md)
 combines controlled memory and skill studies with two engineering accounts and
 works the design through three sample missions. It is draft, independently
-unreviewed and untested for product effectiveness.
+reviewed and accepted, and untested for product effectiveness.
 
 [Building reliability evidence](skills/building-reliability-evidence/SKILL.md)
 defines a bounded claim about a team's repeated operation, combines controlled
@@ -181,8 +181,8 @@ robustness, predictable failure, recovery, intervention and cost. Its
 [supporting synthesis](knowledge/establishing-reliability-across-repeated-operation.md)
 preserves contrary findings about memory interventions and transfers the method
 to three sample missions; the [generated view](views/building-reliability-evidence.md)
-shows that basis. It is draft, independently unreviewed and untested for product
-effectiveness.
+shows that basis. It is draft, independently reviewed and accepted, and untested
+for product effectiveness.
 
 [Sustaining and recovering operations](skills/sustaining-and-recovering-operations/SKILL.md)
 distinguishes useful activity, intentional waiting, blockage and failure;
@@ -193,4 +193,4 @@ transfers service, distributed-systems, job-controller and contingency-planning
 methods with their limits visible, and the [generated
 view](views/sustaining-and-recovering-operations.md) connects that basis to three
 sample missions. The combined method is reasoned transfer: it is draft,
-independently unreviewed and untested for product effectiveness.
+independently reviewed and accepted, and untested for product effectiveness.
