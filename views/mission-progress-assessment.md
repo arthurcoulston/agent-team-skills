@@ -28,6 +28,7 @@ flowchart LR
   knowledge_assessing_progress_under_a_continuing_mission["How to assess progress under a continuing mission"]
   knowledge_choosing_an_accessible_work_increment["Worked transfer — choose the next accessible-work increment"]
   knowledge_choosing_work_under_a_directive["What is known about an agent choosing its own next work"]
+  knowledge_establishing_operating_direction["What an operating direction must make testable"]
   knowledge_mission_difficulty_basis_2026_09_10["Why the sample missions were estimated just beyond the public frontier"]
   evidence_goal_drift_trading_2026_09_09[("Technical Report: Evaluating Goal Drift in Language Model Agents")]
   evidence_goal_selection_divergence_2026_09_09[("Language Model Goal Selection Differs from Humans' in a Self-Directed Learning Task")]
@@ -55,6 +56,9 @@ flowchart LR
   knowledge_choosing_an_accessible_work_increment -->|sources| evidence_goal_selection_divergence_2026_09_09
   knowledge_choosing_work_under_a_directive -->|sources| evidence_goal_drift_trading_2026_09_09
   knowledge_choosing_work_under_a_directive -->|sources| evidence_goal_selection_divergence_2026_09_09
+  knowledge_establishing_operating_direction -->|applies_to| mission_accessible_work_tools
+  knowledge_establishing_operating_direction -->|applies_to| mission_community_decision_watch
+  knowledge_establishing_operating_direction -->|sources| evidence_mission_assessment_magenta_book_2026_09_10
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_accessible_work_tools
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_adaptive_ambition_support
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_community_decision_watch
@@ -82,6 +86,7 @@ flowchart LR
 - [How to assess progress under a continuing mission](../knowledge/assessing-progress-under-a-continuing-mission.md), `knowledge:assessing-progress-under-a-continuing-mission`
 - [Worked transfer — choose the next accessible-work increment](../knowledge/choosing-an-accessible-work-increment.md), `knowledge:choosing-an-accessible-work-increment`
 - [What is known about an agent choosing its own next work](../knowledge/choosing-work-under-a-directive.md), `knowledge:choosing-work-under-a-directive`
+- [What an operating direction must make testable](../knowledge/establishing-operating-direction.md), `knowledge:establishing-operating-direction`
 - [Why the sample missions were estimated just beyond the public frontier](../knowledge/mission-difficulty-basis-2026-09-10.md), `knowledge:mission-difficulty-basis-2026-09-10`
 
 ### Evidence

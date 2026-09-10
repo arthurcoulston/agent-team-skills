@@ -148,3 +148,12 @@ finding that shapes it most runs against intuition: modelling the recipient as a
 person with finite attention makes escalating everything worse for safety than
 escalating selectively — though that one is a simulation and says so. It is
 draft and awaiting independent review, with no behavioural case run against it.
+
+[Turning a directive into operating direction](skills/turning-a-directive-into-operating-direction/SKILL.md)
+establishes the strategic basis beneath repeated work: beneficiaries, value
+hypotheses, bounds, observable outcomes, assumptions, decision-led review and
+propagation when direction changes. Its [supporting
+basis](knowledge/establishing-operating-direction.md) transfers evaluation,
+performance-review and change-control methods with their limits intact and
+works them through two sample missions. It is draft, independently unreviewed
+and untested for product effectiveness.
