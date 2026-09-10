@@ -83,3 +83,15 @@ between [what a session boundary costs](knowledge/session-boundary-losses.md)
 and [why an inherited record has to be checked](knowledge/verifying-an-inherited-record.md).
 It is draft and awaiting independent review, and no behavioural case has been
 run against it either.
+
+[Choosing what to work on next](skills/choosing-what-to-work-on-next/SKILL.md)
+is the fourth substantive candidate: selecting the next work under a standing
+directive, against the alternatives declined, and recognising work that should
+be retired or redirected. It rests on
+[what is known about an agent choosing its own work](knowledge/choosing-work-under-a-directive.md)
+and [which signals say work should end](knowledge/retiring-and-redirecting-work.md).
+The evidence behind it is thinner than for the other three, and the skill says
+so: a 1,547-paper survey of long-horizon agents does not treat goal selection
+as part of the agent's decision space at all, so much of the method is reasoned
+transfer marked as such. It is draft and awaiting independent review, with no
+behavioural case run against it.
