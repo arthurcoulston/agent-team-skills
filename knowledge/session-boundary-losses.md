@@ -80,8 +80,8 @@ not as an incidence rate.
 The annotated multi-agent failure taxonomy shows the same shapes at a
 smaller scale in bounded traces: loss of conversation history 2.80%, step
 repetition 15.7%, unaware of termination conditions 12.4%. Step repetition —
-redoing what has already been done — is the second largest single mode in
-that taxonomy, and a lost record is one way to produce it.
+redoing what has already been done — is the largest single mode among the
+fourteen that taxonomy annotates, and a lost record is one way to produce it.
 
 ## Compaction is not a handoff, and its failure is silent
 
