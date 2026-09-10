@@ -95,3 +95,16 @@ so: a 1,547-paper survey of long-horizon agents does not treat goal selection
 as part of the agent's decision space at all, so much of the method is reasoned
 transfer marked as such. It is draft and awaiting independent review, with no
 behavioural case run against it.
+
+[Reviewing another agent's work](skills/reviewing-another-agents-work/SKILL.md)
+is the fifth substantive candidate: one independent judgment of one
+contribution — what a review must establish, who can give it, what the verdict
+attaches to, and what a pass does not show. It rests on
+[what reviewer independence buys](knowledge/choosing-an-independent-reviewer.md)
+and
+[what a review verdict establishes](knowledge/what-a-review-verdict-establishes.md).
+This is the best-supplied of the five: judge agreement corrected for chance,
+correlated errors between reviewers, and one measurement that inverts an
+intuition — asking a reviewer to explain and repair as well as judge sharply
+increases how often it rejects correct work. It is draft and awaiting
+independent review, with no behavioural case run against it.
