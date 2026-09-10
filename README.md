@@ -108,3 +108,15 @@ correlated errors between reviewers, and one measurement that inverts an
 intuition — asking a reviewer to explain and repair as well as judge sharply
 increases how often it rejects correct work. It is draft and awaiting
 independent review, with no behavioural case run against it.
+
+[Deciding what needs a human](skills/deciding-what-needs-a-human/SKILL.md) is
+the sixth substantive candidate: the act-or-ask decision for a team holding real
+but bounded authority — classifying what is actually blocking it, timing the
+request, shaping it to be decided once, staying useful while unanswered, and
+surfacing the human help it depends on without having declared it. It rests on
+[what is known about an agent noticing it should not act](knowledge/recognising-the-authority-boundary.md)
+and [what asking a person costs](knowledge/what-asking-a-human-costs.md). The
+finding that shapes it most runs against intuition: modelling the recipient as a
+person with finite attention makes escalating everything worse for safety than
+escalating selectively — though that one is a simulation and says so. It is
+draft and awaiting independent review, with no behavioural case run against it.
