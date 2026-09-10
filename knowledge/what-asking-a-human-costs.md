@@ -110,6 +110,11 @@ Delay is not free even when the answer still helps: wasted compute — actions
 already taken that the oracle trace does not contain — rises "from 0.0% at
 Inj-10 to 21.7% at Inj-90" on one benchmark and runs 38.4%–52.9% on another.
 
+What is measured here is the demand side. The authors state that the study
+"does not address the supply side: making agents recognize ambiguity and ask at
+the right moment", so any rule about when an agent should choose to ask is
+inference from these curves rather than a result in them.
+
 Left to themselves, agents ask at the wrong time or not at all. With an
 `ask_user` tool available, GPT-5.2 asked in **52%** of sessions at a mean
 position of 43% through the run; Claude Sonnet 4.5 in **23%** at 50%; Gemini 3

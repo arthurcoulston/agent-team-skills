@@ -116,12 +116,18 @@ arrived at 10% of the run and 0.39 at 70% — against a baseline of 0.40, so
 essentially worthless. **Input**-level information held value through roughly
 half the run; **constraint** information stayed above baseline throughout.
 
-The rule that follows: **ask about the goal before you start; ask about
-constraints when you reach them; ask about inputs when you need them.** A
-question about what you are for is nearly worthless once you have built the
-thing. Waiting also destroys work you have already done — actions that turn out
-not to belong on the path rose from none to over a fifth of the trajectory as
-the answer arrived later.
+The rule that follows — **ask about the goal before you start; ask about
+constraints when you reach them; ask about inputs when you need them** — is our
+reading of those curves, not a measured result. The curves come from
+*injecting* answers at fixed points in a trajectory; no study here measured an
+agent choosing its own moment to ask, and that study's authors say so
+explicitly, calling the supply side unaddressed. What is measured is the decay.
+The rule is what we think a leader should do about it. A question about what
+you are for is nearly worthless once you have built the thing.
+
+Waiting also destroys work you have already done — actions that turn out not to
+belong on the path rose from none to over a fifth of the trajectory as the
+answer arrived later.
 
 Left to themselves, agents do this badly. Given a tool to ask, one model used it
 in 52% of sessions, another in 23%, and a third in **0%** — and even the most
@@ -268,9 +274,15 @@ simulated user or a larger model — both answer instantly, completely and witho
 irritation, which is the most optimistic possible model of a person. And the
 central claim that escalating everything is counterproductive comes from a
 simulation with an assumed fatigue curve; the direction is supported, the
-numbers are not constants. Where this skill gives a rule that no source measured
-in this setting — the classification of blockages, the shape of a request, the
-dependency sweep — it is our judgment, and the linked entries say which is which.
+numbers are not constants. Four rules here are our judgment rather than any
+source's finding, and each is marked where it is given: **the three-way
+classification of a blockage** (no source distinguishes a missing permission
+from a missing capability from a judgment that is theirs), **routing the
+act-or-ask decision on reversibility and cost of discovery**, **the shape of a
+request** (no controlled evidence about escalation content was found), and **the
+dependency sweep** with its three dispositions. The timing rule is a reading of
+measured decay curves, which is a weaker claim than the curves themselves. The
+linked entries say which is which.
 
 **Draft.** This skill's own effectiveness has not been tested. No behavioural
 case has been run against it, and nothing here shows that a team following it
