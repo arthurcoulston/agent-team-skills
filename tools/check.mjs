@@ -124,6 +124,20 @@ function checkFounder(entry) {
   }
 }
 
+function checkMission(entry) {
+  const d = entry.data;
+  if (present(entry, 'id', d.id) && d.id !== entry.id) {
+    report(entry.rel, 'id-filename-mismatch', `frontmatter id is '${d.id}' but the filename stem is '${entry.id}'`);
+  }
+  present(entry, 'title', d.title);
+  if (present(entry, 'status', d.status) && !STATUSES.includes(d.status)) {
+    report(entry.rel, 'status-unknown', `status '${d.status}' is not one of ${STATUSES.join(', ')}`);
+  }
+  if (!d.difficulty || !DATE.test(String(d.difficulty.assessed_on ?? '')) || d.difficulty.band !== 'B' || !String(d.difficulty.basis ?? '').trim()) {
+    report(entry.rel, 'mission-difficulty-basis-missing', "difficulty must give assessed_on as YYYY-MM-DD, target band 'B', and a non-empty basis; the frontier claim is dated judgment, not a timeless fact");
+  }
+}
+
 function checkKnowledge(entry, resolved) {
   const d = entry.data;
   if (present(entry, 'id', d.id) && d.id !== entry.id) {
@@ -390,6 +404,7 @@ for (const entry of entries) {
   if (entry.kind === 'evidence') checkEvidence(entry);
   if (entry.kind === 'view') checkView(entry, refs, entries);
   if (entry.kind === 'founder') checkFounder(entry);
+  if (entry.kind === 'mission') checkMission(entry);
 }
 const linksChecked = checkLinks(entries.filter((e) => e.data), refsByToken);
 const filesScanned = scanForLocalPaths();
@@ -401,7 +416,7 @@ const counted = (kind, noun) => {
 const refsResolved = [...refsByToken.values()].reduce((n, s) => n + s.size, 0);
 
 if (findings.length === 0) {
-  console.log(`GREEN  ${counted('skill', 'skill')}, ${counted('knowledge', 'knowledge entry')}, ${counted('case', 'case')}, ${counted('evidence', 'evidence record')}, ${counted('view', 'view')}`);
+  console.log(`GREEN  ${counted('mission', 'mission')}, ${counted('founder', 'founder entry')}, ${counted('skill', 'skill')}, ${counted('knowledge', 'knowledge entry')}, ${counted('case', 'case')}, ${counted('evidence', 'evidence record')}, ${counted('view', 'view')}`);
   console.log(`       ${refsResolved} typed refs resolved, ${linksChecked} prose links checked, ${filesScanned} files scanned for local paths`);
   process.exit(0);
 }

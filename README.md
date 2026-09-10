@@ -37,10 +37,11 @@ the outline does not settle the taxonomy or skill boundaries.
 
 [LAYOUT.md](LAYOUT.md) states the conventions in full. In short: skill
 entrypoints in the open [Agent Skills](https://code.claude.com/docs/en/skills)
-format under `skills/`; supporting knowledge entries with stable identifiers,
-typed relationships and source/review metadata under `knowledge/`; and the
-preserved readings and runs they rest on under `evidence/`. Behavioural cases under `cases/`, each a task run with and
-without the skill, with both answers preserved as evidence. Generated maps
+format under `skills/`; standing sample directives under `missions/`;
+supporting knowledge entries with stable identifiers, typed relationships and
+source/review metadata under `knowledge/`; and the preserved readings and runs
+they rest on under `evidence/`. Behavioural cases under `cases/`, each a task
+run with and without the skill, preserve both answers as evidence. Generated maps
 under `views/`, drawn from those same relationships rather than beside them —
 see [views/worked-example.md](views/worked-example.md). `node
 tools/check.mjs` checks a tree against those conventions, `node
@@ -58,6 +59,14 @@ like and what a change has to demonstrate before it is accepted.
 collection intended to stay loaded. It points back to the selectively loaded
 skills rather than summarising them, and records why each promotion earned its
 recurring context cost.
+
+## Sample missions
+
+[The sample missions](missions/) are continuing directives for reasoning about
+and eventually testing a founder. They specify purpose, starting resources and
+bounds without prescribing a product, route, team or terminal checklist. They
+have not been run; their Band B difficulty is a dated estimate made on
+2026-09-10, not a measured threshold.
 
 ## Foundational work in progress
 

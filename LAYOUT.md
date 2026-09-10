@@ -1,6 +1,6 @@
 # Layout
 
-Six kinds of file, six directories, and one rule for how they refer to
+Seven kinds of file, seven directories, and one rule for how they refer to
 each other.
 
     skills/<name>/SKILL.md    an entrypoint an agent loads
@@ -9,10 +9,10 @@ each other.
     evidence/<id>.md          a preserved record an entry rests on
     views/<id>.md             a generated map over the four above
     founder/<id>.md           sparse context a founder keeps loaded
+    missions/<id>.md          a continuing directive and its operating bounds
 
-One worked example of each is in the tree already. They exist to show the
-shape: their claims are exemplars, not ratified guidance, and they say so in
-their own metadata.
+Examples of every kind are in the tree. Their metadata distinguishes exemplar
+records from draft candidates; presence in the repository is not acceptance.
 
 ## Research before product form
 
@@ -68,6 +68,20 @@ bodies remain selectively loaded from their index. Its frontmatter carries
 `id`, `title`, `status`, `loading: always`, and typed relations recording the
 skills from which each promotion came. A consuming agent's own profile still
 governs identity, authority and boundaries.
+
+## Missions
+
+`missions/<id>.md`. A mission is a standing directive, not a task with a
+terminal state. Its frontmatter carries `id`, `title`, `status`, and a
+`difficulty` record with `assessed_on`, `band` and `basis`. The body carries
+the directive, beneficiaries and value, starting circumstances and bounds,
+the dated difficulty estimate, continuing progress and known hazards.
+
+The target is Band B: plausibly just beyond the public frontier on the date
+stated. That is a reasoned estimate, not a test result. Missions stay open
+enough that a founder must discover the work, organization and route; they do
+not hide access barriers such as identity, payments or legal authority inside
+an apparent capability challenge.
 
 ## Knowledge entries
 
@@ -203,7 +217,7 @@ Two forms, for two readers.
   `<kind>:<id>`, resolving as `knowledge:x` → `knowledge/x.md`,
   `evidence:x` → `evidence/x.md`, `case:x` → `cases/x.md`,
   `view:x` → `views/x.md`, `skill:x` → `skills/x/SKILL.md`, and
-  `founder:x` → `founder/x.md`.
+  `founder:x` → `founder/x.md`, and `mission:x` → `missions/x.md`.
 - **Relative markdown links**, in prose, for a person following the argument.
 
 Where a relation and a prose link mean the same thing, both are present and
