@@ -75,3 +75,11 @@ with [a view](views/coordinating-delegated-work.md) over the five source
 readings behind them. It is draft and awaiting independent review; no
 behavioural case has been run against it, so nothing here shows it changes what
 a leader does.
+
+[Handing work across sessions](skills/handing-work-across-sessions/SKILL.md) is
+the third substantive candidate: what a run must leave behind when it ends, and
+what a later run must check before acting on that record. Its basis is split
+between [what a session boundary costs](knowledge/session-boundary-losses.md)
+and [why an inherited record has to be checked](knowledge/verifying-an-inherited-record.md).
+It is draft and awaiting independent review, and no behavioural case has been
+run against it either.
