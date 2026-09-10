@@ -38,10 +38,11 @@ not.
 
 Band B as estimated on 2026-09-10: bounded research tasks are demonstrated, but
 choosing consequential problems and preserving a revisable program across
-sessions exercise self-direction and continuity. A 2026 position paper on
-[autonomous scientific discovery](https://arxiv.org/abs/2605.08956) identifies
-problem selection as a missing capability, but reports no experiment of its
-own. This mission has not been run, and the band is not a measured threshold.
+sessions exercise self-direction and continuity. The dated [difficulty
+basis](../knowledge/mission-difficulty-basis-2026-09-10.md) records a 2026
+position paper identifying problem selection as a missing capability, while
+also preserving that it reports no experiment of its own. This mission has not
+been run, and the band is not a measured threshold.
 
 ## Continuing progress
 

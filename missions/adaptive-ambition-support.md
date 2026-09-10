@@ -35,9 +35,10 @@ access; or conceal uncertainty and conflicts of interest.
 
 Band B as estimated on 2026-09-10: it requires continuity across changing
 goals and repeated choices about what would now help, while keeping one human
-close enough to correct value errors. A production-agent report documented
-[22 incidents in eight weeks](https://arxiv.org/abs/2606.14589), showing the
-fragility of continuity rather than success at this mission. This mission has
+close enough to correct value errors. The dated [difficulty
+basis](../knowledge/mission-difficulty-basis-2026-09-10.md) records a
+production-agent report of 22 incidents in eight weeks, evidence of continuity
+failures rather than success at this mission. This mission has
 not been run, and the band is not a measured threshold.
 
 ## Continuing progress

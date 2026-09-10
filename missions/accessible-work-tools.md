@@ -39,9 +39,11 @@ appropriate audit, use deceptive acquisition, or take physical action.
 Band B as estimated on 2026-09-10: individual research, coding and support
 tasks are within demonstrated agent capability, but selecting and revising a
 strategy while sustaining software after delivery exercises self-direction and
-stewardship. Public evidence did not establish months-long autonomous software
-maintenance; [CEO-Bench v2](https://arxiv.org/abs/2606.18543) also found every
-evaluated model below a rule-based baseline on an indefinite business objective.
+stewardship. Within the public-source search completed on 2026-09-10, no primary
+evidence established months-long autonomous software maintenance; the dated
+[difficulty basis](../knowledge/mission-difficulty-basis-2026-09-10.md) also
+records CEO-Bench v2 finding every evaluated model below a rule-based baseline
+on an indefinite business objective.
 This mission has not been run, and the band is not a measured threshold.
 
 ## Continuing progress

@@ -37,9 +37,11 @@ promise legal advice, or speak for the community without a recorded mandate.
 
 Band B as estimated on 2026-09-10: it combines ongoing strategy selection with
 sustained correspondence among parties with their own interests. Each research
-or communication act is ordinary, but no strong public demonstration was found
-of an agent organization maintaining this pursuit over months. [CEO-Bench
-v2](https://arxiv.org/abs/2606.18543) supports the direction gap. This mission
+or communication act is ordinary. Within the public-source search completed on
+2026-09-10, no strong demonstration was found of an agent organization
+maintaining this pursuit over months; the dated [difficulty
+basis](../knowledge/mission-difficulty-basis-2026-09-10.md) records the search
+scope and CEO-Bench v2 evidence for the direction gap. This mission
 has not been run, and the band is not a measured threshold.
 
 ## Continuing progress

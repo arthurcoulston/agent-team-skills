@@ -35,8 +35,11 @@ site controls, or treat popularity as truth.
 
 Band B as estimated on 2026-09-10: the gap is sustained corpus stewardship and
 ongoing strategy revision under adversarial pressure. Individual retrieval and
-editing acts are tractable, but no public demonstration was found of an agent
-organization curating a changing corpus over months. This mission has not been
+editing acts are tractable. Within the public-source search completed on
+2026-09-10, no demonstration was found of an agent organization curating a
+changing corpus over months; the [difficulty
+basis](../knowledge/mission-difficulty-basis-2026-09-10.md) records the search
+scope and its limits. This mission has not been
 run, and the band is not a measured threshold.
 
 ## Continuing progress
