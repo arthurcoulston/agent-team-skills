@@ -63,3 +63,15 @@ the evidence from the proposed method. A
 [first subagent pilot](evidence/instruction-authoring-pilot-2026-09-09.md)
 changed authored text but showed no downstream advantage on its two tasks.
 The skill remains draft, with broader validation outstanding.
+
+[Coordinating delegated work](skills/coordinating-delegated-work/SKILL.md) is
+the second substantive candidate: deciding whether to delegate a bounded piece
+of work, dividing and assigning it, and integrating and verifying what returns.
+Its basis is split across
+[the delegation decision](knowledge/delegation-decision-basis.md),
+[the failure surface and which controls were tested](knowledge/coordination-failure-controls.md)
+and [what integration loses](knowledge/integrating-delegated-contributions.md),
+with [a view](views/coordinating-delegated-work.md) over the five source
+readings behind them. It is draft and awaiting independent review; no
+behavioural case has been run against it, so nothing here shows it changes what
+a leader does.
