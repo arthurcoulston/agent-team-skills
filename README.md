@@ -173,3 +173,13 @@ conflict handling and use. Its [supporting synthesis](knowledge/placing-and-rene
 combines controlled memory and skill studies with two engineering accounts and
 works the design through three sample missions. It is draft, independently
 unreviewed and untested for product effectiveness.
+
+[Building reliability evidence](skills/building-reliability-evidence/SKILL.md)
+defines a bounded claim about a team's repeated operation, combines controlled
+repeats with longitudinal operating evidence, and profiles repeatability,
+robustness, predictable failure, recovery, intervention and cost. Its
+[supporting synthesis](knowledge/establishing-reliability-across-repeated-operation.md)
+preserves contrary findings about memory interventions and transfers the method
+to three sample missions; the [generated view](views/building-reliability-evidence.md)
+shows that basis. It is draft, independently unreviewed and untested for product
+effectiveness.

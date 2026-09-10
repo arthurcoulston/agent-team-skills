@@ -29,6 +29,7 @@ flowchart LR
   knowledge_choosing_an_accessible_work_increment["Worked transfer — choose the next accessible-work increment"]
   knowledge_choosing_work_under_a_directive["What is known about an agent choosing its own next work"]
   knowledge_establishing_operating_direction["What an operating direction must make testable"]
+  knowledge_establishing_reliability_across_repeated_operation["How to establish reliability across repeated team operation"]
   knowledge_mission_difficulty_basis_2026_09_10["Why the sample missions were estimated just beyond the public frontier"]
   knowledge_placing_and_renewing_agent_context["How context placement, retrieval and renewal fail"]
   knowledge_shaping_roles_and_decision_rights["When work earns a role and what that role must own"]
@@ -61,6 +62,9 @@ flowchart LR
   knowledge_establishing_operating_direction -->|applies_to| mission_accessible_work_tools
   knowledge_establishing_operating_direction -->|applies_to| mission_community_decision_watch
   knowledge_establishing_operating_direction -->|sources| evidence_mission_assessment_magenta_book_2026_09_10
+  knowledge_establishing_reliability_across_repeated_operation -->|applies_to| mission_accessible_work_tools
+  knowledge_establishing_reliability_across_repeated_operation -->|applies_to| mission_public_evidence_ledger
+  knowledge_establishing_reliability_across_repeated_operation -->|applies_to| mission_reproducible_practice
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_accessible_work_tools
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_adaptive_ambition_support
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_community_decision_watch
@@ -95,6 +99,7 @@ flowchart LR
 - [Worked transfer — choose the next accessible-work increment](../knowledge/choosing-an-accessible-work-increment.md), `knowledge:choosing-an-accessible-work-increment`
 - [What is known about an agent choosing its own next work](../knowledge/choosing-work-under-a-directive.md), `knowledge:choosing-work-under-a-directive`
 - [What an operating direction must make testable](../knowledge/establishing-operating-direction.md), `knowledge:establishing-operating-direction`
+- [How to establish reliability across repeated team operation](../knowledge/establishing-reliability-across-repeated-operation.md), `knowledge:establishing-reliability-across-repeated-operation`
 - [Why the sample missions were estimated just beyond the public frontier](../knowledge/mission-difficulty-basis-2026-09-10.md), `knowledge:mission-difficulty-basis-2026-09-10`
 - [How context placement, retrieval and renewal fail](../knowledge/placing-and-renewing-agent-context.md), `knowledge:placing-and-renewing-agent-context`
 - [When work earns a role and what that role must own](../knowledge/shaping-roles-and-decision-rights.md), `knowledge:shaping-roles-and-decision-rights`
