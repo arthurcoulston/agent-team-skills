@@ -30,6 +30,7 @@ flowchart LR
   knowledge_choosing_work_under_a_directive["What is known about an agent choosing its own next work"]
   knowledge_establishing_operating_direction["What an operating direction must make testable"]
   knowledge_mission_difficulty_basis_2026_09_10["Why the sample missions were estimated just beyond the public frontier"]
+  knowledge_placing_and_renewing_agent_context["How context placement, retrieval and renewal fail"]
   knowledge_shaping_roles_and_decision_rights["When work earns a role and what that role must own"]
   evidence_goal_drift_trading_2026_09_09[("Technical Report: Evaluating Goal Drift in Language Model Agents")]
   evidence_goal_selection_divergence_2026_09_09[("Language Model Goal Selection Differs from Humans' in a Self-Directed Learning Task")]
@@ -65,6 +66,9 @@ flowchart LR
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_community_decision_watch
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_public_evidence_ledger
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_reproducible_practice
+  knowledge_placing_and_renewing_agent_context -->|applies_to| mission_accessible_work_tools
+  knowledge_placing_and_renewing_agent_context -->|applies_to| mission_adaptive_ambition_support
+  knowledge_placing_and_renewing_agent_context -->|applies_to| mission_public_evidence_ledger
   knowledge_shaping_roles_and_decision_rights -->|applies_to| mission_accessible_work_tools
   knowledge_shaping_roles_and_decision_rights -->|applies_to| mission_community_decision_watch
   knowledge_shaping_roles_and_decision_rights -->|applies_to| mission_reproducible_practice
@@ -92,6 +96,7 @@ flowchart LR
 - [What is known about an agent choosing its own next work](../knowledge/choosing-work-under-a-directive.md), `knowledge:choosing-work-under-a-directive`
 - [What an operating direction must make testable](../knowledge/establishing-operating-direction.md), `knowledge:establishing-operating-direction`
 - [Why the sample missions were estimated just beyond the public frontier](../knowledge/mission-difficulty-basis-2026-09-10.md), `knowledge:mission-difficulty-basis-2026-09-10`
+- [How context placement, retrieval and renewal fail](../knowledge/placing-and-renewing-agent-context.md), `knowledge:placing-and-renewing-agent-context`
 - [When work earns a role and what that role must own](../knowledge/shaping-roles-and-decision-rights.md), `knowledge:shaping-roles-and-decision-rights`
 
 ### Evidence

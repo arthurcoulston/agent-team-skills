@@ -165,3 +165,11 @@ reorganization triggers. Its [supporting basis](knowledge/shaping-roles-and-deci
 separates bounded execution-mode evidence from reasoned guidance about persistent
 roles and works the distinction through three sample missions. It is draft,
 independently unreviewed and untested for product effectiveness.
+
+[Designing context and retrieval](skills/designing-context-and-retrieval/SKILL.md)
+places a continuing role's information across always-loaded context, selective
+guidance, live state and durable evidence, then tests discovery, retrieval,
+conflict handling and use. Its [supporting synthesis](knowledge/placing-and-renewing-agent-context.md)
+combines controlled memory and skill studies with two engineering accounts and
+works the design through three sample missions. It is draft, independently
+unreviewed and untested for product effectiveness.
