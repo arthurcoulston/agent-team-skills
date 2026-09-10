@@ -97,7 +97,12 @@ mechanism is plain enough: a reviewer told to produce a fix has been given a
 reason to find something to fix.
 
 So judge first and record the verdict. Only then, separately, work out what
-should change.
+should change. That two-pass split is our inference from the mechanism, not a
+measured result. What was measured is that the combined prompt is worse; the
+remedy those authors tested was the executable filter below, and no source
+shows that separating the passes recovers the judge-only rejection rate. We
+give it because the reason the combined prompt fails — a reviewer deciding
+while holding a repair — is absent once the verdict is already recorded.
 
 Two more habits, both cheap:
 
@@ -126,14 +131,19 @@ settle it. Sort them honestly:
   different conversation with the person who set them.
 
 Findings that cost nothing to raise arrive in volumes that swamp real ones. The
-best-evidenced discipline against this is to make a finding pay for itself:
-require that acting on it would produce an observable difference, and drop the
-ones where it would not. Where the artifact can be exercised, do it — running
-the current version against the proposed change and keeping only findings whose
-correction changes something observable cut wrongly rejected work by roughly
-two thirds while adding almost no missed defects. Where nothing is executable,
-the same test applies in words: name what would be different if the finding
-were acted on, and if you cannot, it is a preference.
+discipline with the best evidence behind it is to make a finding pay for
+itself: require that acting on it would produce an observable difference, and
+drop the ones where it would not. Where the artifact can be exercised, do it —
+running the current version against the proposed change and keeping only
+findings whose correction changes something observable cut wrongly rejected
+work by roughly two thirds while adding almost no missed defects.
+
+That is the measured half, and it was measured on executable artifacts. Where
+nothing is executable we apply the same test in words — name what would be
+different if the finding were acted on, and if you cannot, it is a preference —
+but that verbal form is our extension and nobody has measured it. It keeps the
+shape of the test while losing the part that did the work, which is that the
+filter ran without the reviewer's opinion in the loop.
 
 ## Pin the verdict to an exact artifact
 
@@ -224,8 +234,12 @@ answer. Your reviews are of substantive work with no reference answer, which is
 the harder case, and the transfer is reasoned rather than measured: the
 direction of each finding is what carries over, and none of the numbers are
 constants. Where this skill gives a threshold or a procedure that no source
-measured in this setting, it is our judgment, and the linked entries say which
-is which.
+measured in this setting, it is our judgment, and it is marked where it is
+given. Two of those carry more weight than the rest: **judging in a pass
+separate from working out the repair** — what was measured is that the combined
+prompt is worse, not that splitting it into passes fixes that — and **the
+verbal form of making a finding pay for itself**, where the measured filter was
+executable and the words-only version is ours.
 
 **Draft.** This skill's own effectiveness has not been tested. No behavioural
 case has been run against it, and nothing here shows that a team following it

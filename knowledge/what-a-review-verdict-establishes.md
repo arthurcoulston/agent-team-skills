@@ -160,6 +160,19 @@ rejection fell from 54.8% to 16.3%, 69.0% to 28.9%, and 51.0% to 24.0% across
 the three datasets, while false positives rose by fractions of a point. Its
 authors note the tasks were small Python functions and may not generalise.
 
+Two pieces of guidance we draw from this section are ours, not the sources'.
+Neither is measured, and both should be read as reasoned transfer:
+
+- **Judge in one pass and work out the repair in a separate one.** What the
+  measurement establishes is that the *combined* prompt is far worse. The
+  remedy its authors tested was the fix-guided filter above, not a separation
+  into passes, and nothing here shows that recording the verdict first recovers
+  the judge-only rate. The mechanism makes it plausible; that is all.
+- **Applying the pay-for-itself test in words where nothing is executable.**
+  The filter's measured effect came from actually running two versions. A
+  reviewer asking itself what would be observably different is the same
+  question without the independent check that answered it, and is untested.
+
 ## Reviewing is also where the work gets dropped
 
 The annotated multi-agent failure taxonomy — 150 expert-annotated traces at
