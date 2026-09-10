@@ -30,6 +30,7 @@ flowchart LR
   knowledge_choosing_work_under_a_directive["What is known about an agent choosing its own next work"]
   knowledge_establishing_operating_direction["What an operating direction must make testable"]
   knowledge_mission_difficulty_basis_2026_09_10["Why the sample missions were estimated just beyond the public frontier"]
+  knowledge_shaping_roles_and_decision_rights["When work earns a role and what that role must own"]
   evidence_goal_drift_trading_2026_09_09[("Technical Report: Evaluating Goal Drift in Language Model Agents")]
   evidence_goal_selection_divergence_2026_09_09[("Language Model Goal Selection Differs from Humans' in a Self-Directed Learning Task")]
   evidence_mission_assessment_agent_process_2026_09_10[("Beyond Final Scores: A Systematic Evaluation of Agents for Long-Horizon AI Research and Development")]
@@ -64,6 +65,9 @@ flowchart LR
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_community_decision_watch
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_public_evidence_ledger
   knowledge_mission_difficulty_basis_2026_09_10 -->|applies_to| mission_reproducible_practice
+  knowledge_shaping_roles_and_decision_rights -->|applies_to| mission_accessible_work_tools
+  knowledge_shaping_roles_and_decision_rights -->|applies_to| mission_community_decision_watch
+  knowledge_shaping_roles_and_decision_rights -->|applies_to| mission_reproducible_practice
 ```
 
 ## What is in this view
@@ -88,6 +92,7 @@ flowchart LR
 - [What is known about an agent choosing its own next work](../knowledge/choosing-work-under-a-directive.md), `knowledge:choosing-work-under-a-directive`
 - [What an operating direction must make testable](../knowledge/establishing-operating-direction.md), `knowledge:establishing-operating-direction`
 - [Why the sample missions were estimated just beyond the public frontier](../knowledge/mission-difficulty-basis-2026-09-10.md), `knowledge:mission-difficulty-basis-2026-09-10`
+- [When work earns a role and what that role must own](../knowledge/shaping-roles-and-decision-rights.md), `knowledge:shaping-roles-and-decision-rights`
 
 ### Evidence
 

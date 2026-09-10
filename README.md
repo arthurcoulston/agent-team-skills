@@ -157,3 +157,11 @@ basis](knowledge/establishing-operating-direction.md) transfers evaluation,
 performance-review and change-control methods with their limits intact and
 works them through two sample missions. It is draft, independently unreviewed
 and untested for product effectiveness.
+
+[Designing roles and decision rights](skills/designing-roles-and-decision-rights/SKILL.md)
+chooses between one owner, a tool or workflow, temporary assistance and a
+persistent role, then defines responsibility, authority, interfaces and
+reorganization triggers. Its [supporting basis](knowledge/shaping-roles-and-decision-rights.md)
+separates bounded execution-mode evidence from reasoned guidance about persistent
+roles and works the distinction through three sample missions. It is draft,
+independently unreviewed and untested for product effectiveness.
