@@ -96,6 +96,7 @@ function resolveAll(entry, refs) {
 }
 
 function checkIdentifier(entry) {
+  if (entry.kind === 'founder' && entry.id === 'PROFILE') return;
   if (!IDENTIFIER.test(entry.id)) {
     report(entry.rel, 'identifier-format', `'${entry.id}' is not lower-case kebab; refs of the form <kind>:<id> stop resolving mechanically`);
   }
@@ -107,6 +108,20 @@ function checkSkill(entry) {
     report(entry.rel, 'name-directory-mismatch', `frontmatter name is '${d.name}' but the directory is '${entry.id}'`);
   }
   present(entry, 'description', d.description);
+}
+
+function checkFounder(entry) {
+  const d = entry.data;
+  if (present(entry, 'id', d.id) && d.id !== entry.id) {
+    report(entry.rel, 'id-filename-mismatch', `frontmatter id is '${d.id}' but the filename stem is '${entry.id}'`);
+  }
+  present(entry, 'title', d.title);
+  if (present(entry, 'status', d.status) && !STATUSES.includes(d.status)) {
+    report(entry.rel, 'status-unknown', `status '${d.status}' is not one of ${STATUSES.join(', ')}`);
+  }
+  if (present(entry, 'loading', d.loading) && d.loading !== 'always') {
+    report(entry.rel, 'founder-loading-invalid', `loading is '${d.loading}', not 'always'; founder profiles are retained context`);
+  }
 }
 
 function checkKnowledge(entry, resolved) {
@@ -374,6 +389,7 @@ for (const entry of entries) {
   if (entry.kind === 'case') checkCase(entry);
   if (entry.kind === 'evidence') checkEvidence(entry);
   if (entry.kind === 'view') checkView(entry, refs, entries);
+  if (entry.kind === 'founder') checkFounder(entry);
 }
 const linksChecked = checkLinks(entries.filter((e) => e.data), refsByToken);
 const filesScanned = scanForLocalPaths();

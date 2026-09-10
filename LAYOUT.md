@@ -1,6 +1,6 @@
 # Layout
 
-Five kinds of file, five directories, and one rule for how they refer to
+Six kinds of file, six directories, and one rule for how they refer to
 each other.
 
     skills/<name>/SKILL.md    an entrypoint an agent loads
@@ -8,6 +8,7 @@ each other.
     cases/<id>.md             a task the guidance is run against
     evidence/<id>.md          a preserved record an entry rests on
     views/<id>.md             a generated map over the four above
+    founder/<id>.md           sparse context a founder keeps loaded
 
 One worked example of each is in the tree already. They exist to show the
 shape: their claims are exemplars, not ratified guidance, and they say so in
@@ -59,6 +60,14 @@ which is both the entry explaining this and the example of a knowledge entry.
 
 Keep the body short enough to be worth loading. Anything a reader needs only
 sometimes belongs in a knowledge entry the body links to.
+
+## Founder context
+
+`founder/PROFILE.md` is sparse guidance a founder keeps loaded while skill
+bodies remain selectively loaded from their index. Its frontmatter carries
+`id`, `title`, `status`, `loading: always`, and typed relations recording the
+skills from which each promotion came. A consuming agent's own profile still
+governs identity, authority and boundaries.
 
 ## Knowledge entries
 
@@ -193,7 +202,8 @@ Two forms, for two readers.
 - **Typed refs**, in frontmatter, for the checks and the generated views:
   `<kind>:<id>`, resolving as `knowledge:x` → `knowledge/x.md`,
   `evidence:x` → `evidence/x.md`, `case:x` → `cases/x.md`,
-  `view:x` → `views/x.md`, `skill:x` → `skills/x/SKILL.md`.
+  `view:x` → `views/x.md`, `skill:x` → `skills/x/SKILL.md`, and
+  `founder:x` → `founder/x.md`.
 - **Relative markdown links**, in prose, for a person following the argument.
 
 Where a relation and a prose link mean the same thing, both are present and

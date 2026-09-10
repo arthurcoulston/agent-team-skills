@@ -52,6 +52,13 @@ maps, all with nothing to install.
 [CONTRIBUTING.md](CONTRIBUTING.md) states what a useful contribution looks
 like and what a change has to demonstrate before it is accepted.
 
+## Founder context
+
+[The sparse founder profile](founder/PROFILE.md) is the small part of the
+collection intended to stay loaded. It points back to the selectively loaded
+skills rather than summarising them, and records why each promotion earned its
+recurring context cost.
+
 ## Foundational work in progress
 
 [Writing agent instructions](skills/writing-agent-instructions/SKILL.md) is

@@ -16,14 +16,15 @@ export const KIND_PATH = {
   case: (id) => join('cases', `${id}.md`),
   skill: (id) => join('skills', id, 'SKILL.md'),
   view: (id) => join('views', `${id}.md`),
+  founder: (id) => join('founder', `${id}.md`),
 };
 // The kind names a ref uses are singular; three of the directories are not.
-export const FLAT_DIR = { knowledge: 'knowledge', evidence: 'evidence', case: 'cases', view: 'views' };
+export const FLAT_DIR = { knowledge: 'knowledge', evidence: 'evidence', case: 'cases', view: 'views', founder: 'founder' };
 export const STATUSES = ['exemplar', 'draft', 'accepted', 'superseded'];
 export const RELATION_TYPES = ['applies_to', 'supports', 'depends_on', 'supersedes'];
 export const DATE = /^\d{4}-\d{2}-\d{2}$/;
 export const IDENTIFIER = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-export const TYPED_REF = /^(knowledge|evidence|case|skill|view):(.+)$/;
+export const TYPED_REF = /^(knowledge|evidence|case|skill|view|founder):(.+)$/;
 
 // Fixtures are deliberately broken and carry fictional local paths on
 // purpose; the fixture runner points the checker at each of them directly.
