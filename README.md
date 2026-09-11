@@ -165,6 +165,17 @@ view](views/external-interface-boundaries.md) shows those relationships. The
 combined procedure is reasoned transfer: it is draft, awaiting independent
 review, and untested for product effectiveness.
 
+[Evaluating context and skill changes](skills/evaluating-context-and-skill-changes/SKILL.md)
+separates natural discovery, the effect of content after exposure, and the
+end-to-end deployment effect. It compares downstream behavior and actual loaded
+context against matched baselines, preserves negative and regression cases, and
+limits adoption claims to the tested configuration. Its [supporting
+synthesis](knowledge/evaluating-context-and-skill-changes.md) retains contrary
+results across three direct skill studies, and its [generated
+view](views/evaluating-context-and-skill-changes.md) maps that basis. The method
+is draft, awaiting independent review, and has not been tested on this
+collection or a continuing team.
+
 [Turning a directive into operating direction](skills/turning-a-directive-into-operating-direction/SKILL.md)
 establishes the strategic basis beneath repeated work: beneficiaries, value
 hypotheses, bounds, observable outcomes, assumptions, decision-led review and
