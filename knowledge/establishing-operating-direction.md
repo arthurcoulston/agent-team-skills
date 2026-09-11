@@ -25,6 +25,11 @@ sources:
     source_date: 2016-12-01
     evidence_date: 2026-09-10
     evidence: evidence:operating-direction-nasa-change-control-2026-09-10
+  - title: SWE-053 — Manage Requirements Changes
+    url: https://swehb.nasa.gov/spaces/7150/pages/16449679/SWE-053%2B-%2BManage%2BRequirements%2BChanges
+    source_date: unknown
+    evidence_date: 2026-09-11
+    evidence: evidence:direction-change-nasa-swe-053-2026-09-11
 uncertainty: >
   The sources support causal models, evidence-led reviews and controlled
   propagation in policy and engineering settings. They do not test this
@@ -34,7 +39,7 @@ applicability: >
   under a continuing directive. It does not choose the next bounded increment,
   grant authority, or prove that an intervention caused an observed outcome.
 review:
-  last_checked: 2026-09-10
+  last_checked: 2026-09-11
   checked_by: scout
 ---
 
@@ -63,11 +68,14 @@ decision, with event triggers for failed assumptions and changed conditions.
 
 NASA change control supplies a propagation mechanism from a different,
 high-formality setting: identify affected interfaces and documentation,
-coordinate consequential changes, track their state and verify release. For a
+coordinate consequential changes, track their state and verify release. Its
+current Software Engineering Handbook likewise says impact analysis should
+reach beyond the immediate artifact to architecture, interfaces, operations,
+requirements, safety, reliability, performance and needed expertise. For a
 team's direction this supports a change ledger and impact pass over active
-commitments, outcome criteria, roles, context and external promises. It does
-not support importing a configuration-control board or treating strategy as a
-frozen engineering specification.
+commitments, outcome criteria, roles, permissions, context, allocations and
+external promises. It does not support importing a configuration-control
+board or treating strategy as a frozen engineering specification.
 
 Two mission transfers show why the same fields do not imply the same content.
 For `accessible-work-tools`, beneficiary value is less avoidable friction in

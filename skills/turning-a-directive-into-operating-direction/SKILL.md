@@ -77,6 +77,20 @@ material change:
 5. Retain the former direction and disposition so later agents can distinguish
    a deliberate change from drift.
 
+Use one reconciliation ledger for the pass. For each affected item name its
+owner, the superseded premise, the decision to keep, revise or stop it, the
+owning mechanism that must carry that decision, and the evidence that the live
+version changed. Check the seams as well as the records: a revised success
+criterion with an unchanged assignment, permission or public promise is still
+an unresolved conflict. Close the pass only when every affected item has a
+disposition or a named blocker; do not wait for unrelated work to be rebuilt.
+
+Keep three decisions separate. The principal or delegated authority changes
+the operating direction. Work selection then compares bounded commitments
+under that new basis. Reconciliation finds and updates the places where the
+old basis remains operative. Doing one does not silently accomplish the other
+two or grant new authority.
+
 Once direction is established, use [choosing what to work on
 next](../choosing-what-to-work-on-next/SKILL.md) to compare bounded increments.
 That skill does not decide the beneficiaries, value or strategic assumptions
