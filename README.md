@@ -85,6 +85,19 @@ turns that lens into a review method: reconstruct the period, distinguish
 activity from beneficiary change, test claimed learning and require a
 falsifiable next commitment before deciding the next period's course.
 
+## Complete skill index
+
+| Direction and work | Organization and continuity | Evidence, authority and learning |
+| --- | --- | --- |
+| [Turn a directive into operating direction](skills/turning-a-directive-into-operating-direction/SKILL.md) | [Design roles and decision rights](skills/designing-roles-and-decision-rights/SKILL.md) | [Build reliability evidence](skills/building-reliability-evidence/SKILL.md) |
+| [Discover work outside the current view](skills/discovering-work-outside-the-current-view/SKILL.md) | [Coordinate delegated work](skills/coordinating-delegated-work/SKILL.md) | [Review another agent's work](skills/reviewing-another-agents-work/SKILL.md) |
+| [Choose what to work on next](skills/choosing-what-to-work-on-next/SKILL.md) | [Integrate expertise and disagreement](skills/integrating-expertise-and-disagreement/SKILL.md) | [Judge progress under a continuing mission](skills/judging-progress-under-a-continuing-mission/SKILL.md) |
+| [Reconcile portfolio delivery](skills/reconciling-portfolio-delivery/SKILL.md) | [Design context and retrieval](skills/designing-context-and-retrieval/SKILL.md) | [Decide what needs a human](skills/deciding-what-needs-a-human/SKILL.md) |
+| [Allocate capacity](skills/allocating-capacity-under-a-continuing-mission/SKILL.md) | [Cultivate organizational memory](skills/cultivating-organizational-memory/SKILL.md) | [Request a missing capability](skills/requesting-a-missing-capability/SKILL.md) |
+| [Sustain and recover operations](skills/sustaining-and-recovering-operations/SKILL.md) | [Hand work across sessions](skills/handing-work-across-sessions/SKILL.md) | [Design external interfaces](skills/designing-external-interfaces/SKILL.md) |
+| [Maintain guidance](skills/maintaining-guidance/SKILL.md) | [Correct repeated failures](skills/correcting-repeated-failures/SKILL.md) | [Evaluate context and skill changes](skills/evaluating-context-and-skill-changes/SKILL.md) |
+| [Transfer successful practices](skills/transferring-successful-practices/SKILL.md) | [Write agent instructions](skills/writing-agent-instructions/SKILL.md) | [Write a skill entrypoint](skills/writing-a-skill-entrypoint/SKILL.md) |
+
 ## Foundational work in progress
 
 [Writing agent instructions](skills/writing-agent-instructions/SKILL.md) is
@@ -105,7 +118,7 @@ Its basis is split across
 [the failure surface and which controls were tested](knowledge/coordination-failure-controls.md)
 and [what integration loses](knowledge/integrating-delegated-contributions.md),
 with [a view](views/coordinating-delegated-work.md) over the five source
-readings behind them. It is draft and awaiting independent review; no
+readings behind them. It is draft, independently reviewed and accepted; no
 behavioural case has been run against it, so nothing here shows it changes what
 a leader does.
 
@@ -114,7 +127,7 @@ the third substantive candidate: what a run must leave behind when it ends, and
 what a later run must check before acting on that record. Its basis is split
 between [what a session boundary costs](knowledge/session-boundary-losses.md)
 and [why an inherited record has to be checked](knowledge/verifying-an-inherited-record.md).
-It is draft and awaiting independent review, and no behavioural case has been
+It is draft, independently reviewed and accepted, and no behavioural case has been
 run against it either.
 
 [Choosing what to work on next](skills/choosing-what-to-work-on-next/SKILL.md)
@@ -126,7 +139,7 @@ and [which signals say work should end](knowledge/retiring-and-redirecting-work.
 The evidence behind it is thinner than for the other three, and the skill says
 so: a 1,547-paper survey of long-horizon agents does not treat goal selection
 as part of the agent's decision space at all, so much of the method is reasoned
-transfer marked as such. It is draft and awaiting independent review, with no
+transfer marked as such. It is draft, independently reviewed and accepted, with no
 behavioural case run against it.
 
 [Reviewing another agent's work](skills/reviewing-another-agents-work/SKILL.md)
@@ -139,8 +152,8 @@ and
 This is the best-supplied of the five: judge agreement corrected for chance,
 correlated errors between reviewers, and one measurement that inverts an
 intuition — asking a reviewer to explain and repair as well as judge sharply
-increases how often it rejects correct work. It is draft and awaiting
-independent review, with no behavioural case run against it.
+increases how often it rejects correct work. It is draft, independently reviewed
+and accepted, with no behavioural case run against it.
 
 [Deciding what needs a human](skills/deciding-what-needs-a-human/SKILL.md) is
 the sixth substantive candidate: the act-or-ask decision for a team holding real
@@ -152,7 +165,7 @@ and [what asking a person costs](knowledge/what-asking-a-human-costs.md). The
 finding that shapes it most runs against intuition: modelling the recipient as a
 person with finite attention makes escalating everything worse for safety than
 escalating selectively — though that one is a simulation and says so. It is
-draft and awaiting independent review, with no behavioural case run against it.
+draft, independently reviewed and accepted, with no behavioural case run against it.
 
 [Designing external interfaces](skills/designing-external-interfaces/SKILL.md)
 defines what may cross a boundary, preserves provenance, separates authenticated
@@ -162,8 +175,8 @@ basis](knowledge/designing-external-interface-boundaries.md) combines W3C and
 IETF provenance, message-integrity, authorization, event-envelope, and transport
 semantics while preserving their limits; the [generated
 view](views/external-interface-boundaries.md) shows those relationships. The
-combined procedure is reasoned transfer: it is draft, awaiting independent
-review, and untested for product effectiveness.
+combined procedure is reasoned transfer: it is draft, independently reviewed
+and accepted, and untested for product effectiveness.
 
 [Evaluating context and skill changes](skills/evaluating-context-and-skill-changes/SKILL.md)
 separates natural discovery, the effect of content after exposure, and the
@@ -173,7 +186,7 @@ limits adoption claims to the tested configuration. Its [supporting
 synthesis](knowledge/evaluating-context-and-skill-changes.md) retains contrary
 results across three direct skill studies, and its [generated
 view](views/evaluating-context-and-skill-changes.md) maps that basis. The method
-is draft, awaiting independent review, and has not been tested on this
+is draft, independently reviewed and accepted, and has not been tested on this
 collection or a continuing team.
 
 [Turning a directive into operating direction](skills/turning-a-directive-into-operating-direction/SKILL.md)
@@ -209,7 +222,7 @@ provenance. Its [supporting synthesis](knowledge/selective-organizational-memory
 and [generated view](views/selective-organizational-memory.md) preserve both
 positive curated-transfer evidence and contrary memory, skill, context-cost and
 stale-premise results. The combined lifecycle is reasoned transfer: it is draft,
-awaiting independent review, and untested for product effectiveness.
+independently reviewed and accepted, and untested for product effectiveness.
 
 [Building reliability evidence](skills/building-reliability-evidence/SKILL.md)
 defines a bounded claim about a team's repeated operation, combines controlled
@@ -239,7 +252,7 @@ costs, reserve draws, actual use, and evidence-triggered rebalancing. Its
 [supporting synthesis](knowledge/allocating-capacity-under-a-continuing-mission.md)
 and [generated view](views/capacity-allocation.md) preserve the distinct source
 conditions and contrary evidence against universal ratios. The combined method
-is reasoned transfer: it is draft, awaiting independent review, and untested for
+is reasoned transfer: it is draft, independently reviewed and accepted, and untested for
 product effectiveness.
 
 [Maintaining guidance](skills/maintaining-guidance/SKILL.md) traces changed
@@ -249,7 +262,7 @@ without erasing its evidence. Its [supporting
 basis](knowledge/what-a-guidance-change-costs.md) preserves controlled findings
 that guidance can be neutral, harmful, version-mismatched or costly, alongside
 bounded positive results. The maintenance workflow is reasoned transfer: it is
-draft, awaiting independent review, and untested for product effectiveness.
+draft, independently reviewed and accepted, and untested for product effectiveness.
 
 [Transferring successful practices](skills/transferring-successful-practices/SKILL.md)
 treats a local win as a candidate causal claim, compares cases to extract the
@@ -258,7 +271,7 @@ only to the task, role, organization, or shared-collection altitude the evidence
 has crossed. Its [supporting synthesis](knowledge/transferring-successful-local-practices.md)
 and [generated view](views/transferring-successful-practices.md) preserve human
 transfer conditions and contrary agent results. The combined procedure is
-reasoned transfer: it is draft, awaiting independent review, and untested for
+reasoned transfer: it is draft, independently reviewed and accepted, and untested for
 product effectiveness.
 
 [Discovering work outside the current view](skills/discovering-work-outside-the-current-view/SKILL.md)
@@ -270,7 +283,7 @@ synthesis](knowledge/forming-an-outside-view.md) combines service discovery,
 strategic foresight, and reference-class reasoning with their contrary limits;
 the [generated view](views/outside-view-discovery.md) connects that basis to
 three sample missions. The combined workflow is reasoned transfer: it is draft,
-awaiting independent review, and untested for product effectiveness.
+independently reviewed and accepted, and untested for product effectiveness.
 
 [Integrating expertise and disagreement](skills/integrating-expertise-and-disagreement/SKILL.md)
 names one synthesis owner, dispositions material claims before prose, chooses
@@ -280,5 +293,5 @@ unresolved dissent with its provenance and reopening conditions. Its
 retains the adversarial-robustness trade-off and distinguishes bounded-team
 measurements from governance precedents; the [generated
 view](views/integrating-expertise-and-disagreement.md) makes that basis
-inspectable. The combined method is reasoned transfer: it is draft, awaiting
-independent review, and untested for product effectiveness.
+inspectable. The combined method is reasoned transfer: it is draft, independently
+reviewed and accepted, and untested for product effectiveness.
