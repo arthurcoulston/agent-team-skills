@@ -26,6 +26,7 @@ flowchart LR
   founder_first_run[["Sparse founder first-run context"]]
   founder_PROFILE[["Sparse founder profile"]]
   skill_judging_progress_under_a_continuing_mission[["judging-progress-under-a-continuing-mission"]]
+  knowledge_allocating_capacity_under_a_continuing_mission["Why capacity allocation is a revisable portfolio of claims"]
   knowledge_assessing_progress_under_a_continuing_mission["How to assess progress under a continuing mission"]
   knowledge_authority_safe_capability_requests["How to request a capability without treating it as authority"]
   knowledge_choosing_an_accessible_work_increment["Worked transfer — choose the next accessible-work increment"]
@@ -48,6 +49,10 @@ flowchart LR
   founder_first_run -->|depends_on| founder_PROFILE
   founder_first_run -->|depends_on| knowledge_assessing_progress_under_a_continuing_mission
   skill_judging_progress_under_a_continuing_mission -->|depends_on| knowledge_assessing_progress_under_a_continuing_mission
+  knowledge_allocating_capacity_under_a_continuing_mission -->|applies_to| mission_accessible_work_tools
+  knowledge_allocating_capacity_under_a_continuing_mission -->|applies_to| mission_community_decision_watch
+  knowledge_allocating_capacity_under_a_continuing_mission -->|applies_to| mission_public_evidence_ledger
+  knowledge_allocating_capacity_under_a_continuing_mission -->|applies_to| mission_reproducible_practice
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_accessible_work_tools
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_adaptive_ambition_support
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_community_decision_watch
@@ -114,6 +119,7 @@ flowchart LR
 
 ### Knowledge
 
+- [Why capacity allocation is a revisable portfolio of claims](../knowledge/allocating-capacity-under-a-continuing-mission.md), `knowledge:allocating-capacity-under-a-continuing-mission`
 - [How to assess progress under a continuing mission](../knowledge/assessing-progress-under-a-continuing-mission.md), `knowledge:assessing-progress-under-a-continuing-mission`
 - [How to request a capability without treating it as authority](../knowledge/authority-safe-capability-requests.md), `knowledge:authority-safe-capability-requests`
 - [Worked transfer — choose the next accessible-work increment](../knowledge/choosing-an-accessible-work-increment.md), `knowledge:choosing-an-accessible-work-increment`

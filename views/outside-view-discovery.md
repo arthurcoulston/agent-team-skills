@@ -22,6 +22,7 @@ flowchart LR
   mission_public_evidence_ledger(["Keep a contested public evidence resource trustworthy"])
   mission_reproducible_practice(["Advance reproducible knowledge in an emerging practice"])
   founder_PROFILE[["Sparse founder profile"]]
+  skill_allocating_capacity_under_a_continuing_mission[["allocating-capacity-under-a-continuing-mission"]]
   skill_choosing_what_to_work_on_next[["choosing-what-to-work-on-next"]]
   skill_coordinating_delegated_work[["coordinating-delegated-work"]]
   skill_designing_roles_and_decision_rights[["designing-roles-and-decision-rights"]]
@@ -40,6 +41,7 @@ flowchart LR
 
   founder_PROFILE -->|depends_on| skill_choosing_what_to_work_on_next
   founder_PROFILE -->|depends_on| skill_coordinating_delegated_work
+  skill_allocating_capacity_under_a_continuing_mission -->|supports| skill_choosing_what_to_work_on_next
   skill_choosing_what_to_work_on_next -->|supports| skill_coordinating_delegated_work
   skill_choosing_what_to_work_on_next -->|supports| skill_writing_agent_instructions
   skill_coordinating_delegated_work -->|depends_on| skill_writing_agent_instructions
@@ -80,6 +82,7 @@ flowchart LR
 
 ### Skills
 
+- [allocating-capacity-under-a-continuing-mission](../skills/allocating-capacity-under-a-continuing-mission/SKILL.md), `skill:allocating-capacity-under-a-continuing-mission`
 - [choosing-what-to-work-on-next](../skills/choosing-what-to-work-on-next/SKILL.md), `skill:choosing-what-to-work-on-next`
 - [coordinating-delegated-work](../skills/coordinating-delegated-work/SKILL.md), `skill:coordinating-delegated-work`
 - [designing-roles-and-decision-rights](../skills/designing-roles-and-decision-rights/SKILL.md), `skill:designing-roles-and-decision-rights`

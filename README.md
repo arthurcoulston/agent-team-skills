@@ -222,6 +222,16 @@ view](views/sustaining-and-recovering-operations.md) connects that basis to thre
 sample missions. The combined method is reasoned transfer: it is draft,
 independently reviewed and accepted, and untested for product effectiveness.
 
+[Allocating capacity under a continuing mission](skills/allocating-capacity-under-a-continuing-mission/SKILL.md)
+divides a bounded resource envelope among exploration, delivery, maintenance,
+and incident-or-opportunity reserve while exposing assumptions, opportunity
+costs, reserve draws, actual use, and evidence-triggered rebalancing. Its
+[supporting synthesis](knowledge/allocating-capacity-under-a-continuing-mission.md)
+and [generated view](views/capacity-allocation.md) preserve the distinct source
+conditions and contrary evidence against universal ratios. The combined method
+is reasoned transfer: it is draft, awaiting independent review, and untested for
+product effectiveness.
+
 [Maintaining guidance](skills/maintaining-guidance/SKILL.md) traces changed
 evidence, subjects, models, tools, harnesses and user results into affected
 claims and consumers, then keeps, qualifies, replaces or retires each entry
