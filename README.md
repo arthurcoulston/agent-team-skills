@@ -219,3 +219,14 @@ basis](knowledge/what-a-guidance-change-costs.md) preserves controlled findings
 that guidance can be neutral, harmful, version-mismatched or costly, alongside
 bounded positive results. The maintenance workflow is reasoned transfer: it is
 draft, awaiting independent review, and untested for product effectiveness.
+
+[Discovering work outside the current view](skills/discovering-work-outside-the-current-view/SKILL.md)
+runs a bounded strategic pass before ordinary prioritization: reconstruct the
+beneficiary's whole problem, seek evidence beyond the current service and its
+active users, generate materially different interventions and organizational
+forms, and compare every course symmetrically. Its [supporting
+synthesis](knowledge/forming-an-outside-view.md) combines service discovery,
+strategic foresight, and reference-class reasoning with their contrary limits;
+the [generated view](views/outside-view-discovery.md) connects that basis to
+three sample missions. The combined workflow is reasoned transfer: it is draft,
+awaiting independent review, and untested for product effectiveness.
