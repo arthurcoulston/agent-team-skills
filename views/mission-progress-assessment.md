@@ -27,6 +27,7 @@ flowchart LR
   founder_PROFILE[["Sparse founder profile"]]
   skill_judging_progress_under_a_continuing_mission[["judging-progress-under-a-continuing-mission"]]
   knowledge_assessing_progress_under_a_continuing_mission["How to assess progress under a continuing mission"]
+  knowledge_authority_safe_capability_requests["How to request a capability without treating it as authority"]
   knowledge_choosing_an_accessible_work_increment["Worked transfer — choose the next accessible-work increment"]
   knowledge_choosing_work_under_a_directive["What is known about an agent choosing its own next work"]
   knowledge_establishing_operating_direction["What an operating direction must make testable"]
@@ -57,6 +58,9 @@ flowchart LR
   knowledge_assessing_progress_under_a_continuing_mission -->|sources| evidence_mission_assessment_magenta_book_2026_09_10
   knowledge_assessing_progress_under_a_continuing_mission -->|sources| evidence_mission_assessment_oecd_criteria_2026_09_10
   knowledge_assessing_progress_under_a_continuing_mission -->|sources| evidence_mission_assessment_venture_experimentation_2026_09_10
+  knowledge_authority_safe_capability_requests -->|applies_to| mission_accessible_work_tools
+  knowledge_authority_safe_capability_requests -->|applies_to| mission_public_evidence_ledger
+  knowledge_authority_safe_capability_requests -->|applies_to| mission_reproducible_practice
   knowledge_choosing_an_accessible_work_increment -->|applies_to| mission_accessible_work_tools
   knowledge_choosing_an_accessible_work_increment -->|supports| knowledge_assessing_progress_under_a_continuing_mission
   knowledge_choosing_an_accessible_work_increment -->|depends_on| knowledge_choosing_work_under_a_directive
@@ -111,6 +115,7 @@ flowchart LR
 ### Knowledge
 
 - [How to assess progress under a continuing mission](../knowledge/assessing-progress-under-a-continuing-mission.md), `knowledge:assessing-progress-under-a-continuing-mission`
+- [How to request a capability without treating it as authority](../knowledge/authority-safe-capability-requests.md), `knowledge:authority-safe-capability-requests`
 - [Worked transfer — choose the next accessible-work increment](../knowledge/choosing-an-accessible-work-increment.md), `knowledge:choosing-an-accessible-work-increment`
 - [What is known about an agent choosing its own next work](../knowledge/choosing-work-under-a-directive.md), `knowledge:choosing-work-under-a-directive`
 - [What an operating direction must make testable](../knowledge/establishing-operating-direction.md), `knowledge:establishing-operating-direction`
