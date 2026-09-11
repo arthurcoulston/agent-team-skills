@@ -154,6 +154,17 @@ person with finite attention makes escalating everything worse for safety than
 escalating selectively — though that one is a simulation and says so. It is
 draft and awaiting independent review, with no behavioural case run against it.
 
+[Designing external interfaces](skills/designing-external-interfaces/SKILL.md)
+defines what may cross a boundary, preserves provenance, separates authenticated
+identity from command authority, constrains outbound use, and tracks delivery
+through processing and intended effect. Its [supporting
+basis](knowledge/designing-external-interface-boundaries.md) combines W3C and
+IETF provenance, message-integrity, authorization, event-envelope, and transport
+semantics while preserving their limits; the [generated
+view](views/external-interface-boundaries.md) shows those relationships. The
+combined procedure is reasoned transfer: it is draft, awaiting independent
+review, and untested for product effectiveness.
+
 [Turning a directive into operating direction](skills/turning-a-directive-into-operating-direction/SKILL.md)
 establishes the strategic basis beneath repeated work: beneficiaries, value
 hypotheses, bounds, observable outcomes, assumptions, decision-led review and
