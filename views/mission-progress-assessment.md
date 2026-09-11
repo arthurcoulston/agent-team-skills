@@ -25,6 +25,7 @@ flowchart LR
   mission_reproducible_practice(["Advance reproducible knowledge in an emerging practice"])
   founder_first_run[["Sparse founder first-run context"]]
   founder_PROFILE[["Sparse founder profile"]]
+  skill_judging_progress_under_a_continuing_mission[["judging-progress-under-a-continuing-mission"]]
   knowledge_assessing_progress_under_a_continuing_mission["How to assess progress under a continuing mission"]
   knowledge_choosing_an_accessible_work_increment["Worked transfer — choose the next accessible-work increment"]
   knowledge_choosing_work_under_a_directive["What is known about an agent choosing its own next work"]
@@ -44,11 +45,13 @@ flowchart LR
   founder_first_run -->|applies_to| mission_accessible_work_tools
   founder_first_run -->|depends_on| founder_PROFILE
   founder_first_run -->|depends_on| knowledge_assessing_progress_under_a_continuing_mission
+  skill_judging_progress_under_a_continuing_mission -->|depends_on| knowledge_assessing_progress_under_a_continuing_mission
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_accessible_work_tools
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_adaptive_ambition_support
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_community_decision_watch
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_public_evidence_ledger
   knowledge_assessing_progress_under_a_continuing_mission -->|applies_to| mission_reproducible_practice
+  knowledge_assessing_progress_under_a_continuing_mission -->|supports| skill_judging_progress_under_a_continuing_mission
   knowledge_assessing_progress_under_a_continuing_mission -->|sources| evidence_mission_assessment_agent_process_2026_09_10
   knowledge_assessing_progress_under_a_continuing_mission -->|sources| evidence_mission_assessment_magenta_book_2026_09_10
   knowledge_assessing_progress_under_a_continuing_mission -->|sources| evidence_mission_assessment_oecd_criteria_2026_09_10
@@ -96,6 +99,10 @@ flowchart LR
 
 - [Sparse founder first-run context](../founder/first-run.md), `founder:first-run`
 - [Sparse founder profile](../founder/PROFILE.md), `founder:PROFILE`
+
+### Skills
+
+- [judging-progress-under-a-continuing-mission](../skills/judging-progress-under-a-continuing-mission/SKILL.md), `skill:judging-progress-under-a-continuing-mission`
 
 ### Knowledge
 

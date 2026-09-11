@@ -80,6 +80,11 @@ view](views/mission-progress-assessment.md) connects the lens to all five
 missions and to a worked transfer for choosing an accessible-work increment.
 The lens is prospective and has been used zero times.
 
+[Judging progress under a continuing mission](skills/judging-progress-under-a-continuing-mission/SKILL.md)
+turns that lens into a review method: reconstruct the period, distinguish
+activity from beneficiary change, test claimed learning and require a
+falsifiable next commitment before deciding the next period's course.
+
 ## Foundational work in progress
 
 [Writing agent instructions](skills/writing-agent-instructions/SKILL.md) is

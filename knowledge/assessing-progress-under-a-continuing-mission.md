@@ -3,6 +3,8 @@ id: assessing-progress-under-a-continuing-mission
 title: How to assess progress under a continuing mission
 status: draft
 relations:
+  - type: supports
+    to: skill:judging-progress-under-a-continuing-mission
   - type: applies_to
     to: mission:accessible-work-tools
   - type: applies_to
@@ -87,4 +89,3 @@ risk but do not remove it.
 A concrete application is in [choosing the next accessible-work
 increment](choosing-an-accessible-work-increment.md). Neither source review
 nor that transfer demonstrates that the lens improves an organization.
-
