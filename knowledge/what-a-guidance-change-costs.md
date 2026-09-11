@@ -5,6 +5,8 @@ status: draft
 relations:
   - type: applies_to
     to: skill:correcting-repeated-failures
+  - type: applies_to
+    to: skill:maintaining-guidance
 sources:
   - title: "SWE-Skills-Bench: Do Agent Skills Actually Help in Real-World Software Engineering?"
     url: https://arxiv.org/abs/2603.15401v1

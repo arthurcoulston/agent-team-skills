@@ -210,3 +210,12 @@ methods with their limits visible, and the [generated
 view](views/sustaining-and-recovering-operations.md) connects that basis to three
 sample missions. The combined method is reasoned transfer: it is draft,
 independently reviewed and accepted, and untested for product effectiveness.
+
+[Maintaining guidance](skills/maintaining-guidance/SKILL.md) traces changed
+evidence, subjects, models, tools, harnesses and user results into affected
+claims and consumers, then keeps, qualifies, replaces or retires each entry
+without erasing its evidence. Its [supporting
+basis](knowledge/what-a-guidance-change-costs.md) preserves controlled findings
+that guidance can be neutral, harmful, version-mismatched or costly, alongside
+bounded positive results. The maintenance workflow is reasoned transfer: it is
+draft, awaiting independent review, and untested for product effectiveness.
