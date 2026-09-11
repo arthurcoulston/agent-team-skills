@@ -230,3 +230,14 @@ strategic foresight, and reference-class reasoning with their contrary limits;
 the [generated view](views/outside-view-discovery.md) connects that basis to
 three sample missions. The combined workflow is reasoned transfer: it is draft,
 awaiting independent review, and untested for product effectiveness.
+
+[Integrating expertise and disagreement](skills/integrating-expertise-and-disagreement/SKILL.md)
+names one synthesis owner, dispositions material claims before prose, chooses
+an evidence-, ownership- or preference-based decision rule, and preserves
+unresolved dissent with its provenance and reopening conditions. Its
+[supporting synthesis](knowledge/integrating-expertise-and-disagreement.md)
+retains the adversarial-robustness trade-off and distinguishes bounded-team
+measurements from governance precedents; the [generated
+view](views/integrating-expertise-and-disagreement.md) makes that basis
+inspectable. The combined method is reasoned transfer: it is draft, awaiting
+independent review, and untested for product effectiveness.
