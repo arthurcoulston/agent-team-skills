@@ -201,6 +201,16 @@ combines controlled memory and skill studies with two engineering accounts and
 works the design through three sample missions. It is draft, independently
 reviewed and accepted, and untested for product effectiveness.
 
+[Cultivating organizational memory](skills/cultivating-organizational-memory/SKILL.md)
+decides whether experience warrants future influence, places retained material
+among live state, durable evidence, role memory and reusable guidance, and
+consolidates or retires it without erasing exceptions, consent constraints or
+provenance. Its [supporting synthesis](knowledge/selective-organizational-memory.md)
+and [generated view](views/selective-organizational-memory.md) preserve both
+positive curated-transfer evidence and contrary memory, skill, context-cost and
+stale-premise results. The combined lifecycle is reasoned transfer: it is draft,
+awaiting independent review, and untested for product effectiveness.
+
 [Building reliability evidence](skills/building-reliability-evidence/SKILL.md)
 defines a bounded claim about a team's repeated operation, combines controlled
 repeats with longitudinal operating evidence, and profiles repeatability,

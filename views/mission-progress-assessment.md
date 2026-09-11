@@ -36,6 +36,7 @@ flowchart LR
   knowledge_forming_an_outside_view["How to form an outside view of a continuing mission"]
   knowledge_mission_difficulty_basis_2026_09_10["Why the sample missions were estimated just beyond the public frontier"]
   knowledge_placing_and_renewing_agent_context["How context placement, retrieval and renewal fail"]
+  knowledge_selective_organizational_memory["Why useful organizational memory is selective and revisable"]
   knowledge_shaping_roles_and_decision_rights["When work earns a role and what that role must own"]
   knowledge_sustaining_and_restoring_useful_operation["How to sustain and restore useful operation"]
   evidence_goal_drift_trading_2026_09_09[("Technical Report: Evaluating Goal Drift in Language Model Agents")]
@@ -90,6 +91,10 @@ flowchart LR
   knowledge_placing_and_renewing_agent_context -->|applies_to| mission_accessible_work_tools
   knowledge_placing_and_renewing_agent_context -->|applies_to| mission_adaptive_ambition_support
   knowledge_placing_and_renewing_agent_context -->|applies_to| mission_public_evidence_ledger
+  knowledge_selective_organizational_memory -->|applies_to| mission_accessible_work_tools
+  knowledge_selective_organizational_memory -->|applies_to| mission_adaptive_ambition_support
+  knowledge_selective_organizational_memory -->|applies_to| mission_public_evidence_ledger
+  knowledge_selective_organizational_memory -->|applies_to| mission_reproducible_practice
   knowledge_shaping_roles_and_decision_rights -->|applies_to| mission_accessible_work_tools
   knowledge_shaping_roles_and_decision_rights -->|applies_to| mission_community_decision_watch
   knowledge_shaping_roles_and_decision_rights -->|applies_to| mission_reproducible_practice
@@ -129,6 +134,7 @@ flowchart LR
 - [How to form an outside view of a continuing mission](../knowledge/forming-an-outside-view.md), `knowledge:forming-an-outside-view`
 - [Why the sample missions were estimated just beyond the public frontier](../knowledge/mission-difficulty-basis-2026-09-10.md), `knowledge:mission-difficulty-basis-2026-09-10`
 - [How context placement, retrieval and renewal fail](../knowledge/placing-and-renewing-agent-context.md), `knowledge:placing-and-renewing-agent-context`
+- [Why useful organizational memory is selective and revisable](../knowledge/selective-organizational-memory.md), `knowledge:selective-organizational-memory`
 - [When work earns a role and what that role must own](../knowledge/shaping-roles-and-decision-rights.md), `knowledge:shaping-roles-and-decision-rights`
 - [How to sustain and restore useful operation](../knowledge/sustaining-and-restoring-useful-operation.md), `knowledge:sustaining-and-restoring-useful-operation`
 
