@@ -241,6 +241,16 @@ that guidance can be neutral, harmful, version-mismatched or costly, alongside
 bounded positive results. The maintenance workflow is reasoned transfer: it is
 draft, awaiting independent review, and untested for product effectiveness.
 
+[Transferring successful practices](skills/transferring-successful-practices/SKILL.md)
+treats a local win as a candidate causal claim, compares cases to extract the
+smallest invariant mechanism, tests one new boundary at a time, and promotes
+only to the task, role, organization, or shared-collection altitude the evidence
+has crossed. Its [supporting synthesis](knowledge/transferring-successful-local-practices.md)
+and [generated view](views/transferring-successful-practices.md) preserve human
+transfer conditions and contrary agent results. The combined procedure is
+reasoned transfer: it is draft, awaiting independent review, and untested for
+product effectiveness.
+
 [Discovering work outside the current view](skills/discovering-work-outside-the-current-view/SKILL.md)
 runs a bounded strategic pass before ordinary prioritization: reconstruct the
 beneficiary's whole problem, seek evidence beyond the current service and its
