@@ -1,0 +1,12 @@
+{
+  "name": "unbounded-agent-knowledge-base",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Skills and supporting knowledge for agents leading teams over an indefinite operating life",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": "github:arthurcoulston/agent-team-skills",
+  "scripts": {
+    "test": "node tools/check.mjs && node tools/check-fixtures.mjs"
+  },
+  "dependencies": {}
+}
