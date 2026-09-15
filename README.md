@@ -25,7 +25,12 @@ install yet and no compatibility is claimed. One worked example of each kind
 of file is in the tree to show the shape — see [LAYOUT.md](LAYOUT.md). This repository is intended for
 publication once a v0.1 collection exists and has been reviewed — see
 [PUBLIC-BOUNDARY.md](PUBLIC-BOUNDARY.md) for what is and is not intended to
-appear here, and for the licensing proposal.
+appear here.
+
+## Licence
+
+Code under `tools/` is MIT; the written knowledge and skills are CC BY 4.0.
+[LICENSE](LICENSE) states which paths fall under which, and how to attribute.
 
 The repository name is a working name and may change before publication.
 

@@ -1,0 +1,22 @@
+# Licences
+
+This repository is licensed in two parts, because it holds two different
+kinds of work.
+
+**Code — MIT.** Everything under `tools/`: the checks, the case runner, the
+view generation, and their fixtures. Full text in [LICENSE-MIT](LICENSE-MIT).
+
+**Written material — CC BY 4.0.** Everything else: the skills, knowledge
+entries, evidence records, cases, missions, generated views, the founder
+profile, and the documentation at the root. Full text in
+[LICENSE-CC-BY-4.0](LICENSE-CC-BY-4.0), also at
+https://creativecommons.org/licenses/by/4.0/.
+
+Attribute to Arthur Coulston, naming this repository. Where an entry records
+its own author or reviewer, keep that credit with the material.
+
+Third-party sources cited in `knowledge/` and `evidence/` keep their own
+licences. Quoting and citing them here does not relicense them, and the terms
+above do not extend to them.
+
+Copyright (c) 2026 Arthur Coulston.

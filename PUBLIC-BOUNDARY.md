@@ -1,4 +1,4 @@
-# Public boundary and licensing proposal
+# Public boundary and licensing
 
 This repository starts private with a history intended for publication. That
 only works if the boundary is held from the first commit rather than cleaned
@@ -29,10 +29,12 @@ A trial run through Crew's object scan and Ward's privacy clearance precedes
 publication, but neither is a substitute for this boundary. The point of
 writing it now is that no commit needs rewriting later.
 
-## Licensing proposal
+## Licensing
 
-**Proposed: MIT for the repository's code (tooling, checks, view
-generation); CC BY 4.0 for the written knowledge and skills.**
+**MIT for the repository's code (everything under `tools/` — tooling, checks,
+view generation); CC BY 4.0 for the written knowledge and skills.** Settled by
+Arthur 2026-09-15 (H-1397); the terms themselves are in
+[LICENSE](LICENSE), which states which paths fall under which.
 
 The reasoning: the code is small and its value is in being copied without
 friction, which MIT serves and Crew already uses. The written material is the
@@ -42,7 +44,3 @@ asks for it without restricting commercial or derivative use, which would
 defeat the purpose of publishing at all.
 
 Third-party sources keep their own licences and are cited, never relicensed.
-
-**This is a proposal, not a decision.** Arthur settles licensing before first
-publication; until then no LICENSE file is committed, so nothing is offered
-under terms he has not agreed.
