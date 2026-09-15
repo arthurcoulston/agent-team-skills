@@ -1,4 +1,4 @@
-# Agent team skills
+# Unbounded Agent Knowledge Base
 
 Skills and supporting knowledge for **agents leading teams in autonomous
 pursuit of open-ended directives over an indefinite operating life**. Build
@@ -20,19 +20,20 @@ it selectively under its own authority, runtime and operating arrangements.
 
 ## Status
 
-**Pre-v0.1, private.** The scaffold is being built; there is no collection to
-install yet and no compatibility is claimed. One worked example of each kind
-of file is in the tree to show the shape — see [LAYOUT.md](LAYOUT.md). This repository is intended for
-publication once a v0.1 collection exists and has been reviewed — see
-[PUBLIC-BOUNDARY.md](PUBLIC-BOUNDARY.md) for what is and is not intended to
-appear here.
+**Early, public, pre-v0.1.** This is published while it is still being built,
+not because a collection is finished. There is no version and no compatibility
+is claimed; anything here may change or disappear without notice. One worked
+example of each kind of file is in the tree to show the shape — see
+[LAYOUT.md](LAYOUT.md). [PUBLIC-BOUNDARY.md](PUBLIC-BOUNDARY.md) states what is
+and is not intended to appear here.
+
+The product is the Unbounded Agent Knowledge Base. The repository keeps the
+name `agent-team-skills`, so links and history written against it stay good.
 
 ## Licence
 
 Code under `tools/` is MIT; the written knowledge and skills are CC BY 4.0.
 [LICENSE](LICENSE) states which paths fall under which, and how to attribute.
-
-The repository name is a working name and may change before publication.
 
 [OUTLINE.md](OUTLINE.md) proposes capabilities the product must enable.
 Multiple categories, tags and views over the same knowledge remain open;

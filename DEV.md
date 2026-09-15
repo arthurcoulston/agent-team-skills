@@ -12,11 +12,12 @@ commit because the whole history is intended for publication.
 
 ## The invariant a session would get wrong
 
-This repository is private *now* and public *later*, with no rewrite in
-between. So every commit is written as if it were already public: no local
-paths, no credentials, no operating records, no other person's context. The
-cost of getting that wrong is not a bad commit, it is a history that cannot
-be published without destroying its provenance.
+This repository is public, whole history and all, and was written that way
+from the first commit rather than scrubbed later. So every commit is written
+as if it were already public — because it is: no local paths, no credentials,
+no operating records, no other person's context. The cost of getting that
+wrong is not a bad commit, it is a history that cannot be published without
+destroying its provenance.
 
 Second: installation must work from relative references. A consuming team
 clones this repo and nothing else; anything that reaches for an absolute Crew
@@ -45,8 +46,11 @@ him — surveyed with evidence, never picked here. He is personally involved in
 every visual element, so the shipped view is the mechanism working, not a
 calibrated design; real lenses get designed with him in the room.
 
-Tooling is Node with no dependencies and no package.json: a consuming team
-clones and runs, and `npm install` is not a step. The frontmatter parser in
+Tooling is Node with no dependencies: a consuming team clones and runs, and
+`npm install` installs nothing. The `package.json` exists only to name the
+checks — `npm test` runs `check.mjs` then `check-fixtures.mjs` — so Crew's
+release gate can run them in a scratch clone; its `dependencies` stay empty,
+and adding one is a decision, not a convenience. The frontmatter parser in
 `tools/collection.mjs` is deliberately small and handles only the shapes
 LAYOUT.md defines — a schema that outgrows it wants a real YAML dependency,
 not more cases bolted onto it.
@@ -100,11 +104,14 @@ more content in its image without that review.
 
 ## Remote
 
-`github.com/arthurcoulston/agent-team-skills`, **private**. Sync with Crew's `tools/publishing/sync.mjs`, giving it this repository's
-absolute path — a bare name resolves against the working directory and can
-report a different repository synced. It refuses to push anywhere it cannot
-read as private. Publication, when it comes, goes through Crew's
-`PUBLISHING.md`, not through sync.
+`github.com/arthurcoulston/agent-team-skills`, **public and continuously
+published**: main is published as it is written, so a commit here is a commit
+the world can read. Push with Crew's `tools/publishing/sync.mjs`, giving it
+this repository's absolute path — a bare name resolves against the working
+directory and can report a different repository synced. Sync scans the
+outgoing range and refuses to publish anything that looks like a credential or
+a private record. Versions and tags are not sync's: they go through Crew's
+`PUBLISHING.md` and its `publish.mjs` path.
 
 Neither path is written here. This file is inside a repository whose whole
 history is meant for publication, so it carries no path from the machine it
